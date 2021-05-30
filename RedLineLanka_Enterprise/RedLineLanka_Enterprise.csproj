@@ -1,0 +1,2250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45496B20-0520-4091-8A70-853A462A4A54}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RedLineLanka_Enterprise</RootNamespace>
+    <AssemblyName>RedLineLanka_Enterprise</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>4.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6.7\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Graph, Version=3.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.3.9.0\lib\net461\Microsoft.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Graph.Core, Version=1.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.Core.1.21.0\lib\net45\Microsoft.Graph.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.8\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.0\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserRolesController.cs" />
+    <Compile Include="Areas\Admin\Models\UserRoleVM.cs" />
+    <Compile Include="Areas\Base\Controllers\DashBoardController.cs" />
+    <Compile Include="Areas\Base\Controllers\MailController.cs" />
+    <Compile Include="Areas\Base\Models\DashBoardVM.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\RoleVM.cs" />
+    <Compile Include="Areas\Admin\Models\UserVM.cs" />
+    <Compile Include="Areas\Base\BaseAreaRegistration.cs" />
+    <Compile Include="Areas\Base\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Base\Controllers\DataController.cs" />
+    <Compile Include="Areas\Base\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Base\Models\SignInVM.cs" />
+    <Compile Include="Areas\Base\Models\ReportParameterVM.cs" />
+    <Compile Include="Common\DB\dbRedLineLankaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRedLineLankaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\dbRedLineLankaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\dbRedLineLankaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\Menu.cs">
+      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\Parameter.cs">
+      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\Role.cs">
+      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\User.cs">
+      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\UserRole.cs">
+      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ExtendedActionFilterAttribute.cs" />
+    <Compile Include="Common\ExtendedAuthorizeAttribute.cs" />
+    <Compile Include="Common\Alert.cs" />
+    <Compile Include="Common\BaseViewModel.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Common\HtmlHelperExtenstions.cs" />
+    <Compile Include="Common\GraphApiHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsReports.cs">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\dbOsilPharmacyEnterprise.mdf" />
+    <Content Include="App_Data\dbOsilPharmacyEnterprise_log.ldf">
+      <DependentUpon>dbOsilPharmacyEnterprise.mdf</DependentUpon>
+    </Content>
+    <Content Include="Common\DB\dbRedLineLankaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
+      <LastGenOutput>dbRedLineLankaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Common\DB\dbRedLineLankaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
+      <LastGenOutput>dbRedLineLankaModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Common\DB\ExecuteNew.sql" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\audio\audio_background.mp3" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-icons.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.beta\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\brands.css" />
+    <Content Include="Content\brands.min.css" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
+    <Content Include="Content\ChartsStyle.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome-all.css" />
+    <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\icons-1.4.0\font\index.html" />
+    <Content Include="Content\Images\analytics.png" />
+    <Content Include="Content\Images\arrow-first.png" />
+    <Content Include="Content\Images\arrow-last.png" />
+    <Content Include="Content\Images\arrow-left.png" />
+    <Content Include="Content\Images\arrow-right.png" />
+    <Content Include="Content\Images\banknotes-32.png" />
+    <Content Include="Content\Images\check %284%29.png" />
+    <Content Include="Content\Images\checklist.png" />
+    <Content Include="Content\Images\default_user.png" />
+    <Content Include="Content\Images\Dropout.png" />
+    <Content Include="Content\Images\facebook-3-32.png" />
+    <Content Include="Content\Images\globe-32.png" />
+    <Content Include="Content\Images\Logos\Amex.png" />
+    <Content Include="Content\Images\Logos\BOC.png" />
+    <Content Include="Content\Images\Logos\cash.png" />
+    <Content Include="Content\Images\Logos\CreditCard.png" />
+    <Content Include="Content\Images\Logos\DebitCard.png" />
+    <Content Include="Content\Images\Logos\deposit.png" />
+    <Content Include="Content\Images\Logos\Master.png" />
+    <Content Include="Content\Images\Logos\ntb.png" />
+    <Content Include="Content\Images\Logos\online-payment-methods.png" />
+    <Content Include="Content\Images\Logos\Seylan.png" />
+    <Content Include="Content\Images\Logos\Seylan_Bank_logo.png" />
+    <Content Include="Content\Images\Logos\Visa.png" />
+    <Content Include="Content\Images\Logos\VisaMaster.png" />
+    <Content Include="Content\Images\money-bag-32.png" />
+    <Content Include="Content\Images\money32.png" />
+    <Content Include="Content\Images\new4.png" />
+    <Content Include="Content\Images\reqComplete.png" />
+    <Content Include="Content\Images\EmpLeave.png" />
+    <Content Include="Content\Images\EmpShortLeave.png" />
+    <Content Include="Content\Images\Enrollments\Default.png" />
+    <Content Include="Content\Images\ExamScedule.png" />
+    <Content Include="Content\Images\GovernmrntLogo.jpg" />
+    <Content Include="Content\Images\i.jpg" />
+    <Content Include="Content\Images\interview.png" />
+    <Content Include="Content\Images\lastnode.png" />
+    <Content Include="Content\Images\Logos\250px-Tweetboard_bootstrap_logo.png" />
+    <Content Include="Content\Images\Logos\AJAX_logo_by_gengns.svg.png" />
+    <Content Include="Content\Images\Logos\csharp.png" />
+    <Content Include="Content\Images\Logos\Homepage_MVC_Logo.png" />
+    <Content Include="Content\Images\Logos\jquery-icon.png" />
+    <Content Include="Content\Images\Logos\json_bumper.sh-600x600.png" />
+    <Content Include="Content\Images\Logos\sql-server-2012.png" />
+    <Content Include="Content\Images\Logos\vs2103.png" />
+    <Content Include="Content\Images\no-records.png" />
+    <Content Include="Content\Images\node.png" />
+    <Content Include="Content\Images\OngoingProgress.png" />
+    <Content Include="Content\Images\Processing.gif" />
+    <Content Include="Content\Images\progressSummary.png" />
+    <Content Include="Content\Images\search.png" />
+    <Content Include="Content\Images\Rejected.png" />
+    <Content Include="Content\Images\NewYear2018.png" />
+    <Content Include="Content\Images\vline.png" />
+    <Content Include="Content\Index.css" />
+    <Content Include="Content\Index\animate.css" />
+    <Content Include="Content\Index\animate.min.css" />
+    <Content Include="Content\Index\bootstrap-dropdownhover.css" />
+    <Content Include="Content\Index\bootstrap-dropdownhover.js" />
+    <Content Include="Content\Index\bootstrap-dropdownhover.min.css" />
+    <Content Include="Content\Index\bootstrap-dropdownhover.min.js" />
+    <Content Include="Content\Index\bootstrap-index.css" />
+    <Content Include="Content\jquery-ui-MonthPicker.css" />
+    <Content Include="Content\jquery-ui-MonthPicker.min.css" />
+    <Content Include="Content\jquery-ui-timepicker-addon.css" />
+    <Content Include="Content\Layout\elegant-icons-style.css" />
+    <Content Include="Content\Layout\gapi-latin.css" />
+    <Content Include="Content\Layout\line-icons.css" />
+    <Content Include="Content\Layout\style.css" />
+    <Content Include="Content\Login\bootstrap.4.1.3.min.css" />
+    <Content Include="Content\Login\login.css" />
+    <Content Include="Content\PopUpSelector.css" />
+    <Content Include="Content\FireWork.css" />
+    <Content Include="Content\regular.css" />
+    <Content Include="Content\regular.min.css" />
+    <Content Include="Content\SnowStyle.css" />
+    <Content Include="Content\solid.css" />
+    <Content Include="Content\solid.min.css" />
+    <Content Include="Content\steps.css" />
+    <Content Include="Content\svg-with-js.css" />
+    <Content Include="Content\svg-with-js.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\v4-shims.css" />
+    <Content Include="Content\v4-shims.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\ElegantIcons.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Admin\UserRole.js" />
+    <Content Include="Scripts\Admin\User.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Base\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Base\Views\Home\SignIn.cshtml" />
+    <Content Include="Areas\Base\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Base\Views\Shared\_PartialAlert.cshtml" />
+    <Content Include="Areas\Base\Views\Shared\_PartialMenu.cshtml" />
+    <Content Include="Areas\Base\Views\Shared\_PartialPopupSelector.cshtml" />
+    <Content Include="Areas\Base\Views\Shared\_PartialNotifications.cshtml" />
+    <Content Include="Areas\Base\Views\web.config" />
+    <Content Include="Areas\Base\Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.custom.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\fontawesome\all.js" />
+    <Content Include="Scripts\fontawesome\all.min.js" />
+    <Content Include="Scripts\fontawesome\brands.js" />
+    <Content Include="Scripts\fontawesome\brands.min.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.min.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.min.js" />
+    <Content Include="Scripts\fontawesome\regular.js" />
+    <Content Include="Scripts\fontawesome\regular.min.js" />
+    <Content Include="Scripts\fontawesome\solid.js" />
+    <Content Include="Scripts\fontawesome\solid.min.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="webfonts\alarm-fill.svg" />
+    <Content Include="webfonts\alarm.svg" />
+    <Content Include="webfonts\align-bottom.svg" />
+    <Content Include="webfonts\align-center.svg" />
+    <Content Include="webfonts\align-end.svg" />
+    <Content Include="webfonts\align-middle.svg" />
+    <Content Include="webfonts\align-start.svg" />
+    <Content Include="webfonts\align-top.svg" />
+    <Content Include="webfonts\alt.svg" />
+    <Content Include="webfonts\app-indicator.svg" />
+    <Content Include="webfonts\app.svg" />
+    <Content Include="webfonts\archive-fill.svg" />
+    <Content Include="webfonts\archive.svg" />
+    <Content Include="webfonts\arrow-90deg-down.svg" />
+    <Content Include="webfonts\arrow-90deg-left.svg" />
+    <Content Include="webfonts\arrow-90deg-right.svg" />
+    <Content Include="webfonts\arrow-90deg-up.svg" />
+    <Content Include="webfonts\arrow-bar-down.svg" />
+    <Content Include="webfonts\arrow-bar-left.svg" />
+    <Content Include="webfonts\arrow-bar-right.svg" />
+    <Content Include="webfonts\arrow-bar-up.svg" />
+    <Content Include="webfonts\arrow-clockwise.svg" />
+    <Content Include="webfonts\arrow-counterclockwise.svg" />
+    <Content Include="webfonts\arrow-down-circle-fill.svg" />
+    <Content Include="webfonts\arrow-down-circle.svg" />
+    <Content Include="webfonts\arrow-down-left-circle-fill.svg" />
+    <Content Include="webfonts\arrow-down-left-circle.svg" />
+    <Content Include="webfonts\arrow-down-left-square-fill.svg" />
+    <Content Include="webfonts\arrow-down-left-square.svg" />
+    <Content Include="webfonts\arrow-down-left.svg" />
+    <Content Include="webfonts\arrow-down-right-circle-fill.svg" />
+    <Content Include="webfonts\arrow-down-right-circle.svg" />
+    <Content Include="webfonts\arrow-down-right-square-fill.svg" />
+    <Content Include="webfonts\arrow-down-right-square.svg" />
+    <Content Include="webfonts\arrow-down-right.svg" />
+    <Content Include="webfonts\arrow-down-short.svg" />
+    <Content Include="webfonts\arrow-down-square-fill.svg" />
+    <Content Include="webfonts\arrow-down-square.svg" />
+    <Content Include="webfonts\arrow-down-up.svg" />
+    <Content Include="webfonts\arrow-down.svg" />
+    <Content Include="webfonts\arrow-left-circle-fill.svg" />
+    <Content Include="webfonts\arrow-left-circle.svg" />
+    <Content Include="webfonts\arrow-left-right.svg" />
+    <Content Include="webfonts\arrow-left-short.svg" />
+    <Content Include="webfonts\arrow-left-square-fill.svg" />
+    <Content Include="webfonts\arrow-left-square.svg" />
+    <Content Include="webfonts\arrow-left.svg" />
+    <Content Include="webfonts\arrow-repeat.svg" />
+    <Content Include="webfonts\arrow-return-left.svg" />
+    <Content Include="webfonts\arrow-return-right.svg" />
+    <Content Include="webfonts\arrow-right-circle-fill.svg" />
+    <Content Include="webfonts\arrow-right-circle.svg" />
+    <Content Include="webfonts\arrow-right-short.svg" />
+    <Content Include="webfonts\arrow-right-square-fill.svg" />
+    <Content Include="webfonts\arrow-right-square.svg" />
+    <Content Include="webfonts\arrow-right.svg" />
+    <Content Include="webfonts\arrow-up-circle-fill.svg" />
+    <Content Include="webfonts\arrow-up-circle.svg" />
+    <Content Include="webfonts\arrow-up-left-circle-fill.svg" />
+    <Content Include="webfonts\arrow-up-left-circle.svg" />
+    <Content Include="webfonts\arrow-up-left-square-fill.svg" />
+    <Content Include="webfonts\arrow-up-left-square.svg" />
+    <Content Include="webfonts\arrow-up-left.svg" />
+    <Content Include="webfonts\arrow-up-right-circle-fill.svg" />
+    <Content Include="webfonts\arrow-up-right-circle.svg" />
+    <Content Include="webfonts\arrow-up-right-square-fill.svg" />
+    <Content Include="webfonts\arrow-up-right-square.svg" />
+    <Content Include="webfonts\arrow-up-right.svg" />
+    <Content Include="webfonts\arrow-up-short.svg" />
+    <Content Include="webfonts\arrow-up-square-fill.svg" />
+    <Content Include="webfonts\arrow-up-square.svg" />
+    <Content Include="webfonts\arrow-up.svg" />
+    <Content Include="webfonts\arrows-angle-contract.svg" />
+    <Content Include="webfonts\arrows-angle-expand.svg" />
+    <Content Include="webfonts\arrows-collapse.svg" />
+    <Content Include="webfonts\arrows-expand.svg" />
+    <Content Include="webfonts\arrows-fullscreen.svg" />
+    <Content Include="webfonts\arrows-move.svg" />
+    <Content Include="webfonts\aspect-ratio-fill.svg" />
+    <Content Include="webfonts\aspect-ratio.svg" />
+    <Content Include="webfonts\asterisk.svg" />
+    <Content Include="webfonts\at.svg" />
+    <Content Include="webfonts\award-fill.svg" />
+    <Content Include="webfonts\award.svg" />
+    <Content Include="webfonts\back.svg" />
+    <Content Include="webfonts\backspace-fill.svg" />
+    <Content Include="webfonts\backspace-reverse-fill.svg" />
+    <Content Include="webfonts\backspace-reverse.svg" />
+    <Content Include="webfonts\backspace.svg" />
+    <Content Include="webfonts\badge-3d-fill.svg" />
+    <Content Include="webfonts\badge-3d.svg" />
+    <Content Include="webfonts\badge-4k-fill.svg" />
+    <Content Include="webfonts\badge-4k.svg" />
+    <Content Include="webfonts\badge-8k-fill.svg" />
+    <Content Include="webfonts\badge-8k.svg" />
+    <Content Include="webfonts\badge-ad-fill.svg" />
+    <Content Include="webfonts\badge-ad.svg" />
+    <Content Include="webfonts\badge-ar-fill.svg" />
+    <Content Include="webfonts\badge-ar.svg" />
+    <Content Include="webfonts\badge-cc-fill.svg" />
+    <Content Include="webfonts\badge-cc.svg" />
+    <Content Include="webfonts\badge-hd-fill.svg" />
+    <Content Include="webfonts\badge-hd.svg" />
+    <Content Include="webfonts\badge-tm-fill.svg" />
+    <Content Include="webfonts\badge-tm.svg" />
+    <Content Include="webfonts\badge-vo-fill.svg" />
+    <Content Include="webfonts\badge-vo.svg" />
+    <Content Include="webfonts\badge-vr-fill.svg" />
+    <Content Include="webfonts\badge-vr.svg" />
+    <Content Include="webfonts\badge-wc-fill.svg" />
+    <Content Include="webfonts\badge-wc.svg" />
+    <Content Include="webfonts\bag-check-fill.svg" />
+    <Content Include="webfonts\bag-check.svg" />
+    <Content Include="webfonts\bag-dash-fill.svg" />
+    <Content Include="webfonts\bag-dash.svg" />
+    <Content Include="webfonts\bag-fill.svg" />
+    <Content Include="webfonts\bag-plus-fill.svg" />
+    <Content Include="webfonts\bag-plus.svg" />
+    <Content Include="webfonts\bag-x-fill.svg" />
+    <Content Include="webfonts\bag-x.svg" />
+    <Content Include="webfonts\bag.svg" />
+    <Content Include="webfonts\bar-chart-fill.svg" />
+    <Content Include="webfonts\bar-chart-line-fill.svg" />
+    <Content Include="webfonts\bar-chart-line.svg" />
+    <Content Include="webfonts\bar-chart-steps.svg" />
+    <Content Include="webfonts\bar-chart.svg" />
+    <Content Include="webfonts\basket-fill.svg" />
+    <Content Include="webfonts\basket.svg" />
+    <Content Include="webfonts\basket2-fill.svg" />
+    <Content Include="webfonts\basket2.svg" />
+    <Content Include="webfonts\basket3-fill.svg" />
+    <Content Include="webfonts\basket3.svg" />
+    <Content Include="webfonts\battery-charging.svg" />
+    <Content Include="webfonts\battery-full.svg" />
+    <Content Include="webfonts\battery-half.svg" />
+    <Content Include="webfonts\battery.svg" />
+    <Content Include="webfonts\bell-fill.svg" />
+    <Content Include="webfonts\bell.svg" />
+    <Content Include="webfonts\bezier.svg" />
+    <Content Include="webfonts\bezier2.svg" />
+    <Content Include="webfonts\bicycle.svg" />
+    <Content Include="webfonts\binoculars-fill.svg" />
+    <Content Include="webfonts\binoculars.svg" />
+    <Content Include="webfonts\blockquote-left.svg" />
+    <Content Include="webfonts\blockquote-right.svg" />
+    <Content Include="webfonts\book-fill.svg" />
+    <Content Include="webfonts\book-half.svg" />
+    <Content Include="webfonts\book.svg" />
+    <Content Include="webfonts\bookmark-check-fill.svg" />
+    <Content Include="webfonts\bookmark-check.svg" />
+    <Content Include="webfonts\bookmark-dash-fill.svg" />
+    <Content Include="webfonts\bookmark-dash.svg" />
+    <Content Include="webfonts\bookmark-fill.svg" />
+    <Content Include="webfonts\bookmark-heart-fill.svg" />
+    <Content Include="webfonts\bookmark-heart.svg" />
+    <Content Include="webfonts\bookmark-plus-fill.svg" />
+    <Content Include="webfonts\bookmark-plus.svg" />
+    <Content Include="webfonts\bookmark-star-fill.svg" />
+    <Content Include="webfonts\bookmark-star.svg" />
+    <Content Include="webfonts\bookmark-x-fill.svg" />
+    <Content Include="webfonts\bookmark-x.svg" />
+    <Content Include="webfonts\bookmark.svg" />
+    <Content Include="webfonts\bookmarks-fill.svg" />
+    <Content Include="webfonts\bookmarks.svg" />
+    <Content Include="webfonts\bookshelf.svg" />
+    <Content Include="webfonts\bootstrap-fill.svg" />
+    <Content Include="webfonts\bootstrap-reboot.svg" />
+    <Content Include="webfonts\bootstrap.svg" />
+    <Content Include="webfonts\border-all.svg" />
+    <Content Include="webfonts\border-bottom.svg" />
+    <Content Include="webfonts\border-center.svg" />
+    <Content Include="webfonts\border-inner.svg" />
+    <Content Include="webfonts\border-left.svg" />
+    <Content Include="webfonts\border-middle.svg" />
+    <Content Include="webfonts\border-outer.svg" />
+    <Content Include="webfonts\border-right.svg" />
+    <Content Include="webfonts\border-style.svg" />
+    <Content Include="webfonts\border-top.svg" />
+    <Content Include="webfonts\border-width.svg" />
+    <Content Include="webfonts\border.svg" />
+    <Content Include="webfonts\bounding-box-circles.svg" />
+    <Content Include="webfonts\bounding-box.svg" />
+    <Content Include="webfonts\box-arrow-down-left.svg" />
+    <Content Include="webfonts\box-arrow-down-right.svg" />
+    <Content Include="webfonts\box-arrow-down.svg" />
+    <Content Include="webfonts\box-arrow-in-down-left.svg" />
+    <Content Include="webfonts\box-arrow-in-down-right.svg" />
+    <Content Include="webfonts\box-arrow-in-down.svg" />
+    <Content Include="webfonts\box-arrow-in-left.svg" />
+    <Content Include="webfonts\box-arrow-in-right.svg" />
+    <Content Include="webfonts\box-arrow-in-up-left.svg" />
+    <Content Include="webfonts\box-arrow-in-up-right.svg" />
+    <Content Include="webfonts\box-arrow-in-up.svg" />
+    <Content Include="webfonts\box-arrow-left.svg" />
+    <Content Include="webfonts\box-arrow-right.svg" />
+    <Content Include="webfonts\box-arrow-up-left.svg" />
+    <Content Include="webfonts\box-arrow-up-right.svg" />
+    <Content Include="webfonts\box-arrow-up.svg" />
+    <Content Include="webfonts\box-seam.svg" />
+    <Content Include="webfonts\box.svg" />
+    <Content Include="webfonts\braces.svg" />
+    <Content Include="webfonts\bricks.svg" />
+    <Content Include="webfonts\briefcase-fill.svg" />
+    <Content Include="webfonts\briefcase.svg" />
+    <Content Include="webfonts\brightness-alt-high-fill.svg" />
+    <Content Include="webfonts\brightness-alt-high.svg" />
+    <Content Include="webfonts\brightness-alt-low-fill.svg" />
+    <Content Include="webfonts\brightness-alt-low.svg" />
+    <Content Include="webfonts\brightness-high-fill.svg" />
+    <Content Include="webfonts\brightness-high.svg" />
+    <Content Include="webfonts\brightness-low-fill.svg" />
+    <Content Include="webfonts\brightness-low.svg" />
+    <Content Include="webfonts\broadcast-pin.svg" />
+    <Content Include="webfonts\broadcast.svg" />
+    <Content Include="webfonts\brush-fill.svg" />
+    <Content Include="webfonts\brush.svg" />
+    <Content Include="webfonts\bucket-fill.svg" />
+    <Content Include="webfonts\bucket.svg" />
+    <Content Include="webfonts\bug-fill.svg" />
+    <Content Include="webfonts\bug.svg" />
+    <Content Include="webfonts\building.svg" />
+    <Content Include="webfonts\bullseye.svg" />
+    <Content Include="webfonts\calculator-fill.svg" />
+    <Content Include="webfonts\calculator.svg" />
+    <Content Include="webfonts\calendar-check-fill.svg" />
+    <Content Include="webfonts\calendar-check.svg" />
+    <Content Include="webfonts\calendar-date-fill.svg" />
+    <Content Include="webfonts\calendar-date.svg" />
+    <Content Include="webfonts\calendar-day-fill.svg" />
+    <Content Include="webfonts\calendar-day.svg" />
+    <Content Include="webfonts\calendar-event-fill.svg" />
+    <Content Include="webfonts\calendar-event.svg" />
+    <Content Include="webfonts\calendar-fill.svg" />
+    <Content Include="webfonts\calendar-minus-fill.svg" />
+    <Content Include="webfonts\calendar-minus.svg" />
+    <Content Include="webfonts\calendar-month-fill.svg" />
+    <Content Include="webfonts\calendar-month.svg" />
+    <Content Include="webfonts\calendar-plus-fill.svg" />
+    <Content Include="webfonts\calendar-plus.svg" />
+    <Content Include="webfonts\calendar-range-fill.svg" />
+    <Content Include="webfonts\calendar-range.svg" />
+    <Content Include="webfonts\calendar-week-fill.svg" />
+    <Content Include="webfonts\calendar-week.svg" />
+    <Content Include="webfonts\calendar-x-fill.svg" />
+    <Content Include="webfonts\calendar-x.svg" />
+    <Content Include="webfonts\calendar.svg" />
+    <Content Include="webfonts\calendar2-check-fill.svg" />
+    <Content Include="webfonts\calendar2-check.svg" />
+    <Content Include="webfonts\calendar2-date-fill.svg" />
+    <Content Include="webfonts\calendar2-date.svg" />
+    <Content Include="webfonts\calendar2-day-fill.svg" />
+    <Content Include="webfonts\calendar2-day.svg" />
+    <Content Include="webfonts\calendar2-event-fill.svg" />
+    <Content Include="webfonts\calendar2-event.svg" />
+    <Content Include="webfonts\calendar2-fill.svg" />
+    <Content Include="webfonts\calendar2-minus-fill.svg" />
+    <Content Include="webfonts\calendar2-minus.svg" />
+    <Content Include="webfonts\calendar2-month-fill.svg" />
+    <Content Include="webfonts\calendar2-month.svg" />
+    <Content Include="webfonts\calendar2-plus-fill.svg" />
+    <Content Include="webfonts\calendar2-plus.svg" />
+    <Content Include="webfonts\calendar2-range-fill.svg" />
+    <Content Include="webfonts\calendar2-range.svg" />
+    <Content Include="webfonts\calendar2-week-fill.svg" />
+    <Content Include="webfonts\calendar2-week.svg" />
+    <Content Include="webfonts\calendar2-x-fill.svg" />
+    <Content Include="webfonts\calendar2-x.svg" />
+    <Content Include="webfonts\calendar2.svg" />
+    <Content Include="webfonts\calendar3-event-fill.svg" />
+    <Content Include="webfonts\calendar3-event.svg" />
+    <Content Include="webfonts\calendar3-fill.svg" />
+    <Content Include="webfonts\calendar3-range-fill.svg" />
+    <Content Include="webfonts\calendar3-range.svg" />
+    <Content Include="webfonts\calendar3-week-fill.svg" />
+    <Content Include="webfonts\calendar3-week.svg" />
+    <Content Include="webfonts\calendar3.svg" />
+    <Content Include="webfonts\calendar4-event.svg" />
+    <Content Include="webfonts\calendar4-range.svg" />
+    <Content Include="webfonts\calendar4-week.svg" />
+    <Content Include="webfonts\calendar4.svg" />
+    <Content Include="webfonts\camera-fill.svg" />
+    <Content Include="webfonts\camera-reels-fill.svg" />
+    <Content Include="webfonts\camera-reels.svg" />
+    <Content Include="webfonts\camera-video-fill.svg" />
+    <Content Include="webfonts\camera-video-off-fill.svg" />
+    <Content Include="webfonts\camera-video-off.svg" />
+    <Content Include="webfonts\camera-video.svg" />
+    <Content Include="webfonts\camera.svg" />
+    <Content Include="webfonts\camera2.svg" />
+    <Content Include="webfonts\capslock-fill.svg" />
+    <Content Include="webfonts\capslock.svg" />
+    <Content Include="webfonts\card-checklist.svg" />
+    <Content Include="webfonts\card-heading.svg" />
+    <Content Include="webfonts\card-image.svg" />
+    <Content Include="webfonts\card-list.svg" />
+    <Content Include="webfonts\card-text.svg" />
+    <Content Include="webfonts\caret-down-fill.svg" />
+    <Content Include="webfonts\caret-down-square-fill.svg" />
+    <Content Include="webfonts\caret-down-square.svg" />
+    <Content Include="webfonts\caret-down.svg" />
+    <Content Include="webfonts\caret-left-fill.svg" />
+    <Content Include="webfonts\caret-left-square-fill.svg" />
+    <Content Include="webfonts\caret-left-square.svg" />
+    <Content Include="webfonts\caret-left.svg" />
+    <Content Include="webfonts\caret-right-fill.svg" />
+    <Content Include="webfonts\caret-right-square-fill.svg" />
+    <Content Include="webfonts\caret-right-square.svg" />
+    <Content Include="webfonts\caret-right.svg" />
+    <Content Include="webfonts\caret-up-fill.svg" />
+    <Content Include="webfonts\caret-up-square-fill.svg" />
+    <Content Include="webfonts\caret-up-square.svg" />
+    <Content Include="webfonts\caret-up.svg" />
+    <Content Include="webfonts\cart-check-fill.svg" />
+    <Content Include="webfonts\cart-check.svg" />
+    <Content Include="webfonts\cart-dash-fill.svg" />
+    <Content Include="webfonts\cart-dash.svg" />
+    <Content Include="webfonts\cart-fill.svg" />
+    <Content Include="webfonts\cart-plus-fill.svg" />
+    <Content Include="webfonts\cart-plus.svg" />
+    <Content Include="webfonts\cart-x-fill.svg" />
+    <Content Include="webfonts\cart-x.svg" />
+    <Content Include="webfonts\cart.svg" />
+    <Content Include="webfonts\cart2.svg" />
+    <Content Include="webfonts\cart3.svg" />
+    <Content Include="webfonts\cart4.svg" />
+    <Content Include="webfonts\cash-stack.svg" />
+    <Content Include="webfonts\cash.svg" />
+    <Content Include="webfonts\cast.svg" />
+    <Content Include="webfonts\chat-dots-fill.svg" />
+    <Content Include="webfonts\chat-dots.svg" />
+    <Content Include="webfonts\chat-fill.svg" />
+    <Content Include="webfonts\chat-left-dots-fill.svg" />
+    <Content Include="webfonts\chat-left-dots.svg" />
+    <Content Include="webfonts\chat-left-fill.svg" />
+    <Content Include="webfonts\chat-left-quote-fill.svg" />
+    <Content Include="webfonts\chat-left-quote.svg" />
+    <Content Include="webfonts\chat-left-text-fill.svg" />
+    <Content Include="webfonts\chat-left-text.svg" />
+    <Content Include="webfonts\chat-left.svg" />
+    <Content Include="webfonts\chat-quote-fill.svg" />
+    <Content Include="webfonts\chat-quote.svg" />
+    <Content Include="webfonts\chat-right-dots-fill.svg" />
+    <Content Include="webfonts\chat-right-dots.svg" />
+    <Content Include="webfonts\chat-right-fill.svg" />
+    <Content Include="webfonts\chat-right-quote-fill.svg" />
+    <Content Include="webfonts\chat-right-quote.svg" />
+    <Content Include="webfonts\chat-right-text-fill.svg" />
+    <Content Include="webfonts\chat-right-text.svg" />
+    <Content Include="webfonts\chat-right.svg" />
+    <Content Include="webfonts\chat-square-dots-fill.svg" />
+    <Content Include="webfonts\chat-square-dots.svg" />
+    <Content Include="webfonts\chat-square-fill.svg" />
+    <Content Include="webfonts\chat-square-quote-fill.svg" />
+    <Content Include="webfonts\chat-square-quote.svg" />
+    <Content Include="webfonts\chat-square-text-fill.svg" />
+    <Content Include="webfonts\chat-square-text.svg" />
+    <Content Include="webfonts\chat-square.svg" />
+    <Content Include="webfonts\chat-text-fill.svg" />
+    <Content Include="webfonts\chat-text.svg" />
+    <Content Include="webfonts\chat.svg" />
+    <Content Include="webfonts\check-all.svg" />
+    <Content Include="webfonts\check-circle-fill.svg" />
+    <Content Include="webfonts\check-circle.svg" />
+    <Content Include="webfonts\check-square-fill.svg" />
+    <Content Include="webfonts\check-square.svg" />
+    <Content Include="webfonts\check.svg" />
+    <Content Include="webfonts\check2-all.svg" />
+    <Content Include="webfonts\check2-circle.svg" />
+    <Content Include="webfonts\check2-square.svg" />
+    <Content Include="webfonts\check2.svg" />
+    <Content Include="webfonts\chevron-bar-contract.svg" />
+    <Content Include="webfonts\chevron-bar-down.svg" />
+    <Content Include="webfonts\chevron-bar-expand.svg" />
+    <Content Include="webfonts\chevron-bar-left.svg" />
+    <Content Include="webfonts\chevron-bar-right.svg" />
+    <Content Include="webfonts\chevron-bar-up.svg" />
+    <Content Include="webfonts\chevron-compact-down.svg" />
+    <Content Include="webfonts\chevron-compact-left.svg" />
+    <Content Include="webfonts\chevron-compact-right.svg" />
+    <Content Include="webfonts\chevron-compact-up.svg" />
+    <Content Include="webfonts\chevron-contract.svg" />
+    <Content Include="webfonts\chevron-double-down.svg" />
+    <Content Include="webfonts\chevron-double-left.svg" />
+    <Content Include="webfonts\chevron-double-right.svg" />
+    <Content Include="webfonts\chevron-double-up.svg" />
+    <Content Include="webfonts\chevron-down.svg" />
+    <Content Include="webfonts\chevron-expand.svg" />
+    <Content Include="webfonts\chevron-left.svg" />
+    <Content Include="webfonts\chevron-right.svg" />
+    <Content Include="webfonts\chevron-up.svg" />
+    <Content Include="webfonts\circle-fill.svg" />
+    <Content Include="webfonts\circle-half.svg" />
+    <Content Include="webfonts\circle-square.svg" />
+    <Content Include="webfonts\circle.svg" />
+    <Content Include="webfonts\clipboard-check.svg" />
+    <Content Include="webfonts\clipboard-data.svg" />
+    <Content Include="webfonts\clipboard-minus.svg" />
+    <Content Include="webfonts\clipboard-plus.svg" />
+    <Content Include="webfonts\clipboard-x.svg" />
+    <Content Include="webfonts\clipboard.svg" />
+    <Content Include="webfonts\clock-fill.svg" />
+    <Content Include="webfonts\clock-history.svg" />
+    <Content Include="webfonts\clock.svg" />
+    <Content Include="webfonts\cloud-arrow-down-fill.svg" />
+    <Content Include="webfonts\cloud-arrow-down.svg" />
+    <Content Include="webfonts\cloud-arrow-up-fill.svg" />
+    <Content Include="webfonts\cloud-arrow-up.svg" />
+    <Content Include="webfonts\cloud-check-fill.svg" />
+    <Content Include="webfonts\cloud-check.svg" />
+    <Content Include="webfonts\cloud-download-fill.svg" />
+    <Content Include="webfonts\cloud-download.svg" />
+    <Content Include="webfonts\cloud-drizzle-fill.svg" />
+    <Content Include="webfonts\cloud-drizzle.svg" />
+    <Content Include="webfonts\cloud-fill.svg" />
+    <Content Include="webfonts\cloud-fog-fill.svg" />
+    <Content Include="webfonts\cloud-fog.svg" />
+    <Content Include="webfonts\cloud-fog2-fill.svg" />
+    <Content Include="webfonts\cloud-fog2.svg" />
+    <Content Include="webfonts\cloud-hail-fill.svg" />
+    <Content Include="webfonts\cloud-hail.svg" />
+    <Content Include="webfonts\cloud-haze-1.svg" />
+    <Content Include="webfonts\cloud-haze-fill.svg" />
+    <Content Include="webfonts\cloud-haze.svg" />
+    <Content Include="webfonts\cloud-haze2-fill.svg" />
+    <Content Include="webfonts\cloud-lightning-fill.svg" />
+    <Content Include="webfonts\cloud-lightning-rain-fill.svg" />
+    <Content Include="webfonts\cloud-lightning-rain.svg" />
+    <Content Include="webfonts\cloud-lightning.svg" />
+    <Content Include="webfonts\cloud-minus-fill.svg" />
+    <Content Include="webfonts\cloud-minus.svg" />
+    <Content Include="webfonts\cloud-moon-fill.svg" />
+    <Content Include="webfonts\cloud-moon.svg" />
+    <Content Include="webfonts\cloud-plus-fill.svg" />
+    <Content Include="webfonts\cloud-plus.svg" />
+    <Content Include="webfonts\cloud-rain-fill.svg" />
+    <Content Include="webfonts\cloud-rain-heavy-fill.svg" />
+    <Content Include="webfonts\cloud-rain-heavy.svg" />
+    <Content Include="webfonts\cloud-rain.svg" />
+    <Content Include="webfonts\cloud-slash-fill.svg" />
+    <Content Include="webfonts\cloud-slash.svg" />
+    <Content Include="webfonts\cloud-sleet-fill.svg" />
+    <Content Include="webfonts\cloud-sleet.svg" />
+    <Content Include="webfonts\cloud-snow-fill.svg" />
+    <Content Include="webfonts\cloud-snow.svg" />
+    <Content Include="webfonts\cloud-sun-fill.svg" />
+    <Content Include="webfonts\cloud-sun.svg" />
+    <Content Include="webfonts\cloud-upload-fill.svg" />
+    <Content Include="webfonts\cloud-upload.svg" />
+    <Content Include="webfonts\cloud.svg" />
+    <Content Include="webfonts\clouds-fill.svg" />
+    <Content Include="webfonts\clouds.svg" />
+    <Content Include="webfonts\cloudy-fill.svg" />
+    <Content Include="webfonts\cloudy.svg" />
+    <Content Include="webfonts\code-slash.svg" />
+    <Content Include="webfonts\code-square.svg" />
+    <Content Include="webfonts\code.svg" />
+    <Content Include="webfonts\collection-fill.svg" />
+    <Content Include="webfonts\collection-play-fill.svg" />
+    <Content Include="webfonts\collection-play.svg" />
+    <Content Include="webfonts\collection.svg" />
+    <Content Include="webfonts\columns-gap.svg" />
+    <Content Include="webfonts\columns.svg" />
+    <Content Include="webfonts\command.svg" />
+    <Content Include="webfonts\compass-fill.svg" />
+    <Content Include="webfonts\compass.svg" />
+    <Content Include="webfonts\cone-striped.svg" />
+    <Content Include="webfonts\cone.svg" />
+    <Content Include="webfonts\controller.svg" />
+    <Content Include="webfonts\cpu-fill.svg" />
+    <Content Include="webfonts\cpu.svg" />
+    <Content Include="webfonts\credit-card-2-back-fill.svg" />
+    <Content Include="webfonts\credit-card-2-back.svg" />
+    <Content Include="webfonts\credit-card-2-front-fill.svg" />
+    <Content Include="webfonts\credit-card-2-front.svg" />
+    <Content Include="webfonts\credit-card-fill.svg" />
+    <Content Include="webfonts\credit-card.svg" />
+    <Content Include="webfonts\crop.svg" />
+    <Content Include="webfonts\cup-fill.svg" />
+    <Content Include="webfonts\cup-straw.svg" />
+    <Content Include="webfonts\cup.svg" />
+    <Content Include="webfonts\cursor-fill.svg" />
+    <Content Include="webfonts\cursor-text.svg" />
+    <Content Include="webfonts\cursor.svg" />
+    <Content Include="webfonts\dash-circle-dotted.svg" />
+    <Content Include="webfonts\dash-circle-fill.svg" />
+    <Content Include="webfonts\dash-circle.svg" />
+    <Content Include="webfonts\dash-square-dotted.svg" />
+    <Content Include="webfonts\dash-square-fill.svg" />
+    <Content Include="webfonts\dash-square.svg" />
+    <Content Include="webfonts\dash.svg" />
+    <Content Include="webfonts\diagram-2-fill.svg" />
+    <Content Include="webfonts\diagram-2.svg" />
+    <Content Include="webfonts\diagram-3-fill.svg" />
+    <Content Include="webfonts\diagram-3.svg" />
+    <Content Include="webfonts\diamond-fill.svg" />
+    <Content Include="webfonts\diamond-half.svg" />
+    <Content Include="webfonts\diamond.svg" />
+    <Content Include="webfonts\dice-1-fill.svg" />
+    <Content Include="webfonts\dice-1.svg" />
+    <Content Include="webfonts\dice-2-fill.svg" />
+    <Content Include="webfonts\dice-2.svg" />
+    <Content Include="webfonts\dice-3-fill.svg" />
+    <Content Include="webfonts\dice-3.svg" />
+    <Content Include="webfonts\dice-4-fill.svg" />
+    <Content Include="webfonts\dice-4.svg" />
+    <Content Include="webfonts\dice-5-fill.svg" />
+    <Content Include="webfonts\dice-5.svg" />
+    <Content Include="webfonts\dice-6-fill.svg" />
+    <Content Include="webfonts\dice-6.svg" />
+    <Content Include="webfonts\disc-fill.svg" />
+    <Content Include="webfonts\disc.svg" />
+    <Content Include="webfonts\discord.svg" />
+    <Content Include="webfonts\display-fill.svg" />
+    <Content Include="webfonts\display.svg" />
+    <Content Include="webfonts\distribute-horizontal.svg" />
+    <Content Include="webfonts\distribute-vertical.svg" />
+    <Content Include="webfonts\door-closed-fill.svg" />
+    <Content Include="webfonts\door-closed.svg" />
+    <Content Include="webfonts\door-open-fill.svg" />
+    <Content Include="webfonts\door-open.svg" />
+    <Content Include="webfonts\dot.svg" />
+    <Content Include="webfonts\download.svg" />
+    <Content Include="webfonts\droplet-fill.svg" />
+    <Content Include="webfonts\droplet-half.svg" />
+    <Content Include="webfonts\droplet.svg" />
+    <Content Include="webfonts\earbuds.svg" />
+    <Content Include="webfonts\easel-fill.svg" />
+    <Content Include="webfonts\easel.svg" />
+    <Content Include="webfonts\egg-fill.svg" />
+    <Content Include="webfonts\egg-fried.svg" />
+    <Content Include="webfonts\egg.svg" />
+    <Content Include="webfonts\eject-fill.svg" />
+    <Content Include="webfonts\eject.svg" />
+    <Content Include="webfonts\emoji-angry-fill.svg" />
+    <Content Include="webfonts\emoji-angry.svg" />
+    <Content Include="webfonts\emoji-dizzy-fill.svg" />
+    <Content Include="webfonts\emoji-dizzy.svg" />
+    <Content Include="webfonts\emoji-expressionless-fill.svg" />
+    <Content Include="webfonts\emoji-expressionless.svg" />
+    <Content Include="webfonts\emoji-frown-fill.svg" />
+    <Content Include="webfonts\emoji-frown.svg" />
+    <Content Include="webfonts\emoji-heart-eyes-fill.svg" />
+    <Content Include="webfonts\emoji-heart-eyes.svg" />
+    <Content Include="webfonts\emoji-laughing-fill.svg" />
+    <Content Include="webfonts\emoji-laughing.svg" />
+    <Content Include="webfonts\emoji-neutral-fill.svg" />
+    <Content Include="webfonts\emoji-neutral.svg" />
+    <Content Include="webfonts\emoji-smile-fill.svg" />
+    <Content Include="webfonts\emoji-smile-upside-down-fill.svg" />
+    <Content Include="webfonts\emoji-smile-upside-down.svg" />
+    <Content Include="webfonts\emoji-smile.svg" />
+    <Content Include="webfonts\emoji-sunglasses-fill.svg" />
+    <Content Include="webfonts\emoji-sunglasses.svg" />
+    <Content Include="webfonts\emoji-wink-fill.svg" />
+    <Content Include="webfonts\emoji-wink.svg" />
+    <Content Include="webfonts\envelope-fill.svg" />
+    <Content Include="webfonts\envelope-open-fill.svg" />
+    <Content Include="webfonts\envelope-open.svg" />
+    <Content Include="webfonts\envelope.svg" />
+    <Content Include="webfonts\eraser-fill.svg" />
+    <Content Include="webfonts\eraser.svg" />
+    <Content Include="webfonts\exclamation-circle-fill.svg" />
+    <Content Include="webfonts\exclamation-circle.svg" />
+    <Content Include="webfonts\exclamation-diamond-fill.svg" />
+    <Content Include="webfonts\exclamation-diamond.svg" />
+    <Content Include="webfonts\exclamation-octagon-fill.svg" />
+    <Content Include="webfonts\exclamation-octagon.svg" />
+    <Content Include="webfonts\exclamation-square-fill.svg" />
+    <Content Include="webfonts\exclamation-square.svg" />
+    <Content Include="webfonts\exclamation-triangle-fill.svg" />
+    <Content Include="webfonts\exclamation-triangle.svg" />
+    <Content Include="webfonts\exclamation.svg" />
+    <Content Include="webfonts\exclude.svg" />
+    <Content Include="webfonts\eye-fill.svg" />
+    <Content Include="webfonts\eye-slash-fill.svg" />
+    <Content Include="webfonts\eye-slash.svg" />
+    <Content Include="webfonts\eye.svg" />
+    <Content Include="webfonts\eyedropper.svg" />
+    <Content Include="webfonts\eyeglasses.svg" />
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="webfonts\facebook.svg" />
+    <Content Include="webfonts\file-arrow-down-fill.svg" />
+    <Content Include="webfonts\file-arrow-down.svg" />
+    <Content Include="webfonts\file-arrow-up-fill.svg" />
+    <Content Include="webfonts\file-arrow-up.svg" />
+    <Content Include="webfonts\file-bar-graph-fill.svg" />
+    <Content Include="webfonts\file-bar-graph.svg" />
+    <Content Include="webfonts\file-binary-fill.svg" />
+    <Content Include="webfonts\file-binary.svg" />
+    <Content Include="webfonts\file-break-fill.svg" />
+    <Content Include="webfonts\file-break.svg" />
+    <Content Include="webfonts\file-check-fill.svg" />
+    <Content Include="webfonts\file-check.svg" />
+    <Content Include="webfonts\file-code-fill.svg" />
+    <Content Include="webfonts\file-code.svg" />
+    <Content Include="webfonts\file-diff-fill.svg" />
+    <Content Include="webfonts\file-diff.svg" />
+    <Content Include="webfonts\file-earmark-arrow-down-fill.svg" />
+    <Content Include="webfonts\file-earmark-arrow-down.svg" />
+    <Content Include="webfonts\file-earmark-arrow-up-fill.svg" />
+    <Content Include="webfonts\file-earmark-arrow-up.svg" />
+    <Content Include="webfonts\file-earmark-bar-graph-fill.svg" />
+    <Content Include="webfonts\file-earmark-bar-graph.svg" />
+    <Content Include="webfonts\file-earmark-binary-fill.svg" />
+    <Content Include="webfonts\file-earmark-binary.svg" />
+    <Content Include="webfonts\file-earmark-break-fill.svg" />
+    <Content Include="webfonts\file-earmark-break.svg" />
+    <Content Include="webfonts\file-earmark-check-fill.svg" />
+    <Content Include="webfonts\file-earmark-check.svg" />
+    <Content Include="webfonts\file-earmark-code-fill.svg" />
+    <Content Include="webfonts\file-earmark-code.svg" />
+    <Content Include="webfonts\file-earmark-diff-fill.svg" />
+    <Content Include="webfonts\file-earmark-diff.svg" />
+    <Content Include="webfonts\file-earmark-easel-fill.svg" />
+    <Content Include="webfonts\file-earmark-easel.svg" />
+    <Content Include="webfonts\file-earmark-excel-fill.svg" />
+    <Content Include="webfonts\file-earmark-excel.svg" />
+    <Content Include="webfonts\file-earmark-fill.svg" />
+    <Content Include="webfonts\file-earmark-font-fill.svg" />
+    <Content Include="webfonts\file-earmark-font.svg" />
+    <Content Include="webfonts\file-earmark-image-fill.svg" />
+    <Content Include="webfonts\file-earmark-image.svg" />
+    <Content Include="webfonts\file-earmark-lock-fill.svg" />
+    <Content Include="webfonts\file-earmark-lock.svg" />
+    <Content Include="webfonts\file-earmark-lock2-fill.svg" />
+    <Content Include="webfonts\file-earmark-lock2.svg" />
+    <Content Include="webfonts\file-earmark-medical-fill.svg" />
+    <Content Include="webfonts\file-earmark-medical.svg" />
+    <Content Include="webfonts\file-earmark-minus-fill.svg" />
+    <Content Include="webfonts\file-earmark-minus.svg" />
+    <Content Include="webfonts\file-earmark-music-fill.svg" />
+    <Content Include="webfonts\file-earmark-music.svg" />
+    <Content Include="webfonts\file-earmark-person-fill.svg" />
+    <Content Include="webfonts\file-earmark-person.svg" />
+    <Content Include="webfonts\file-earmark-play-fill.svg" />
+    <Content Include="webfonts\file-earmark-play.svg" />
+    <Content Include="webfonts\file-earmark-plus-fill.svg" />
+    <Content Include="webfonts\file-earmark-plus.svg" />
+    <Content Include="webfonts\file-earmark-post-fill.svg" />
+    <Content Include="webfonts\file-earmark-post.svg" />
+    <Content Include="webfonts\file-earmark-ppt-fill.svg" />
+    <Content Include="webfonts\file-earmark-ppt.svg" />
+    <Content Include="webfonts\file-earmark-richtext-fill.svg" />
+    <Content Include="webfonts\file-earmark-richtext.svg" />
+    <Content Include="webfonts\file-earmark-ruled-fill.svg" />
+    <Content Include="webfonts\file-earmark-ruled.svg" />
+    <Content Include="webfonts\file-earmark-slides-fill.svg" />
+    <Content Include="webfonts\file-earmark-slides.svg" />
+    <Content Include="webfonts\file-earmark-spreadsheet-fill.svg" />
+    <Content Include="webfonts\file-earmark-spreadsheet.svg" />
+    <Content Include="webfonts\file-earmark-text-fill.svg" />
+    <Content Include="webfonts\file-earmark-text.svg" />
+    <Content Include="webfonts\file-earmark-word-fill.svg" />
+    <Content Include="webfonts\file-earmark-word.svg" />
+    <Content Include="webfonts\file-earmark-x-fill.svg" />
+    <Content Include="webfonts\file-earmark-x.svg" />
+    <Content Include="webfonts\file-earmark-zip-fill.svg" />
+    <Content Include="webfonts\file-earmark-zip.svg" />
+    <Content Include="webfonts\file-earmark.svg" />
+    <Content Include="webfonts\file-easel-fill.svg" />
+    <Content Include="webfonts\file-easel.svg" />
+    <Content Include="webfonts\file-excel-fill.svg" />
+    <Content Include="webfonts\file-excel.svg" />
+    <Content Include="webfonts\file-fill.svg" />
+    <Content Include="webfonts\file-font-fill.svg" />
+    <Content Include="webfonts\file-font.svg" />
+    <Content Include="webfonts\file-image-fill.svg" />
+    <Content Include="webfonts\file-image.svg" />
+    <Content Include="webfonts\file-lock-fill.svg" />
+    <Content Include="webfonts\file-lock.svg" />
+    <Content Include="webfonts\file-lock2-fill.svg" />
+    <Content Include="webfonts\file-lock2.svg" />
+    <Content Include="webfonts\file-medical-fill.svg" />
+    <Content Include="webfonts\file-medical.svg" />
+    <Content Include="webfonts\file-minus-fill.svg" />
+    <Content Include="webfonts\file-minus.svg" />
+    <Content Include="webfonts\file-music-fill.svg" />
+    <Content Include="webfonts\file-music.svg" />
+    <Content Include="webfonts\file-person-fill.svg" />
+    <Content Include="webfonts\file-person.svg" />
+    <Content Include="webfonts\file-play-fill.svg" />
+    <Content Include="webfonts\file-play.svg" />
+    <Content Include="webfonts\file-plus-fill.svg" />
+    <Content Include="webfonts\file-plus.svg" />
+    <Content Include="webfonts\file-post-fill.svg" />
+    <Content Include="webfonts\file-post.svg" />
+    <Content Include="webfonts\file-ppt-fill.svg" />
+    <Content Include="webfonts\file-ppt.svg" />
+    <Content Include="webfonts\file-richtext-fill.svg" />
+    <Content Include="webfonts\file-richtext.svg" />
+    <Content Include="webfonts\file-ruled-fill.svg" />
+    <Content Include="webfonts\file-ruled.svg" />
+    <Content Include="webfonts\file-slides-fill.svg" />
+    <Content Include="webfonts\file-slides.svg" />
+    <Content Include="webfonts\file-spreadsheet-fill.svg" />
+    <Content Include="webfonts\file-spreadsheet.svg" />
+    <Content Include="webfonts\file-text-fill.svg" />
+    <Content Include="webfonts\file-text.svg" />
+    <Content Include="webfonts\file-word-fill.svg" />
+    <Content Include="webfonts\file-word.svg" />
+    <Content Include="webfonts\file-x-fill.svg" />
+    <Content Include="webfonts\file-x.svg" />
+    <Content Include="webfonts\file-zip-fill.svg" />
+    <Content Include="webfonts\file-zip.svg" />
+    <Content Include="webfonts\file.svg" />
+    <Content Include="webfonts\files-alt.svg" />
+    <Content Include="webfonts\files.svg" />
+    <Content Include="webfonts\film.svg" />
+    <Content Include="webfonts\filter-circle-fill.svg" />
+    <Content Include="webfonts\filter-circle.svg" />
+    <Content Include="webfonts\filter-left.svg" />
+    <Content Include="webfonts\filter-right.svg" />
+    <Content Include="webfonts\filter-square-fill.svg" />
+    <Content Include="webfonts\filter-square.svg" />
+    <Content Include="webfonts\filter.svg" />
+    <Content Include="webfonts\flag-fill.svg" />
+    <Content Include="webfonts\flag.svg" />
+    <Content Include="webfonts\flower1.svg" />
+    <Content Include="webfonts\flower2.svg" />
+    <Content Include="webfonts\flower3.svg" />
+    <Content Include="webfonts\folder-check.svg" />
+    <Content Include="webfonts\folder-fill.svg" />
+    <Content Include="webfonts\folder-minus.svg" />
+    <Content Include="webfonts\folder-plus.svg" />
+    <Content Include="webfonts\folder-symlink-fill.svg" />
+    <Content Include="webfonts\folder-symlink.svg" />
+    <Content Include="webfonts\folder-x.svg" />
+    <Content Include="webfonts\folder.svg" />
+    <Content Include="webfonts\folder2-open.svg" />
+    <Content Include="webfonts\folder2.svg" />
+    <Content Include="webfonts\fonts.svg" />
+    <Content Include="webfonts\forward-fill.svg" />
+    <Content Include="webfonts\forward.svg" />
+    <Content Include="webfonts\front.svg" />
+    <Content Include="webfonts\fullscreen-exit.svg" />
+    <Content Include="webfonts\fullscreen.svg" />
+    <Content Include="webfonts\funnel-fill.svg" />
+    <Content Include="webfonts\funnel.svg" />
+    <Content Include="webfonts\gear-fill.svg" />
+    <Content Include="webfonts\gear-wide-connected.svg" />
+    <Content Include="webfonts\gear-wide.svg" />
+    <Content Include="webfonts\gear.svg" />
+    <Content Include="webfonts\gem.svg" />
+    <Content Include="webfonts\geo-alt-fill.svg" />
+    <Content Include="webfonts\geo-alt.svg" />
+    <Content Include="webfonts\geo-fill.svg" />
+    <Content Include="webfonts\geo.svg" />
+    <Content Include="webfonts\gift-fill.svg" />
+    <Content Include="webfonts\gift.svg" />
+    <Content Include="webfonts\github.svg" />
+    <Content Include="webfonts\globe.svg" />
+    <Content Include="webfonts\globe2.svg" />
+    <Content Include="webfonts\google.svg" />
+    <Content Include="webfonts\graph-down.svg" />
+    <Content Include="webfonts\graph-up.svg" />
+    <Content Include="webfonts\grid-1x2-fill.svg" />
+    <Content Include="webfonts\grid-1x2.svg" />
+    <Content Include="webfonts\grid-3x2-gap-fill.svg" />
+    <Content Include="webfonts\grid-3x2-gap.svg" />
+    <Content Include="webfonts\grid-3x2.svg" />
+    <Content Include="webfonts\grid-3x3-gap-fill.svg" />
+    <Content Include="webfonts\grid-3x3-gap.svg" />
+    <Content Include="webfonts\grid-3x3.svg" />
+    <Content Include="webfonts\grid-fill.svg" />
+    <Content Include="webfonts\grid.svg" />
+    <Content Include="webfonts\grip-horizontal.svg" />
+    <Content Include="webfonts\grip-vertical.svg" />
+    <Content Include="webfonts\hammer.svg" />
+    <Content Include="webfonts\hand-index-fill.svg" />
+    <Content Include="webfonts\hand-index-thumb-fill.svg" />
+    <Content Include="webfonts\hand-index-thumb.svg" />
+    <Content Include="webfonts\hand-index.svg" />
+    <Content Include="webfonts\hand-thumbs-down-fill.svg" />
+    <Content Include="webfonts\hand-thumbs-down.svg" />
+    <Content Include="webfonts\hand-thumbs-up-fill.svg" />
+    <Content Include="webfonts\hand-thumbs-up.svg" />
+    <Content Include="webfonts\handbag-fill.svg" />
+    <Content Include="webfonts\handbag.svg" />
+    <Content Include="webfonts\hash.svg" />
+    <Content Include="webfonts\hdd-fill.svg" />
+    <Content Include="webfonts\hdd-network-fill.svg" />
+    <Content Include="webfonts\hdd-network.svg" />
+    <Content Include="webfonts\hdd-rack-fill.svg" />
+    <Content Include="webfonts\hdd-rack.svg" />
+    <Content Include="webfonts\hdd-stack-fill.svg" />
+    <Content Include="webfonts\hdd-stack.svg" />
+    <Content Include="webfonts\hdd.svg" />
+    <Content Include="webfonts\headphones.svg" />
+    <Content Include="webfonts\headset.svg" />
+    <Content Include="webfonts\heart-fill.svg" />
+    <Content Include="webfonts\heart-half.svg" />
+    <Content Include="webfonts\heart.svg" />
+    <Content Include="webfonts\heptagon-fill.svg" />
+    <Content Include="webfonts\heptagon-half.svg" />
+    <Content Include="webfonts\heptagon.svg" />
+    <Content Include="webfonts\hexagon-fill.svg" />
+    <Content Include="webfonts\hexagon-half.svg" />
+    <Content Include="webfonts\hexagon.svg" />
+    <Content Include="webfonts\hourglass-bottom.svg" />
+    <Content Include="webfonts\hourglass-split.svg" />
+    <Content Include="webfonts\hourglass-top.svg" />
+    <Content Include="webfonts\hourglass.svg" />
+    <Content Include="webfonts\house-door-fill.svg" />
+    <Content Include="webfonts\house-door.svg" />
+    <Content Include="webfonts\house-fill.svg" />
+    <Content Include="webfonts\house.svg" />
+    <Content Include="webfonts\hr.svg" />
+    <Content Include="webfonts\hurricane.svg" />
+    <Content Include="webfonts\image-alt.svg" />
+    <Content Include="webfonts\image-fill.svg" />
+    <Content Include="webfonts\image.svg" />
+    <Content Include="webfonts\images.svg" />
+    <Content Include="webfonts\inbox-fill.svg" />
+    <Content Include="webfonts\inbox.svg" />
+    <Content Include="webfonts\inboxes-fill.svg" />
+    <Content Include="webfonts\inboxes.svg" />
+    <Content Include="webfonts\info-circle-fill.svg" />
+    <Content Include="webfonts\info-circle.svg" />
+    <Content Include="webfonts\info-square-fill.svg" />
+    <Content Include="webfonts\info-square.svg" />
+    <Content Include="webfonts\info.svg" />
+    <Content Include="webfonts\input-cursor-text.svg" />
+    <Content Include="webfonts\input-cursor.svg" />
+    <Content Include="webfonts\instagram.svg" />
+    <Content Include="webfonts\intersect.svg" />
+    <Content Include="webfonts\journal-album.svg" />
+    <Content Include="webfonts\journal-arrow-down.svg" />
+    <Content Include="webfonts\journal-arrow-up.svg" />
+    <Content Include="webfonts\journal-bookmark-fill.svg" />
+    <Content Include="webfonts\journal-bookmark.svg" />
+    <Content Include="webfonts\journal-check.svg" />
+    <Content Include="webfonts\journal-code.svg" />
+    <Content Include="webfonts\journal-medical.svg" />
+    <Content Include="webfonts\journal-minus.svg" />
+    <Content Include="webfonts\journal-plus.svg" />
+    <Content Include="webfonts\journal-richtext.svg" />
+    <Content Include="webfonts\journal-text.svg" />
+    <Content Include="webfonts\journal-x.svg" />
+    <Content Include="webfonts\journal.svg" />
+    <Content Include="webfonts\journals.svg" />
+    <Content Include="webfonts\joystick.svg" />
+    <Content Include="webfonts\justify-left.svg" />
+    <Content Include="webfonts\justify-right.svg" />
+    <Content Include="webfonts\justify.svg" />
+    <Content Include="webfonts\kanban-fill.svg" />
+    <Content Include="webfonts\kanban.svg" />
+    <Content Include="webfonts\key-fill.svg" />
+    <Content Include="webfonts\key.svg" />
+    <Content Include="webfonts\keyboard-fill.svg" />
+    <Content Include="webfonts\keyboard.svg" />
+    <Content Include="webfonts\ladder.svg" />
+    <Content Include="webfonts\lamp-fill.svg" />
+    <Content Include="webfonts\lamp.svg" />
+    <Content Include="webfonts\laptop-fill.svg" />
+    <Content Include="webfonts\laptop.svg" />
+    <Content Include="webfonts\layer-backward.svg" />
+    <Content Include="webfonts\layer-forward.svg" />
+    <Content Include="webfonts\layers-fill.svg" />
+    <Content Include="webfonts\layers-half.svg" />
+    <Content Include="webfonts\layers.svg" />
+    <Content Include="webfonts\layout-sidebar-inset-reverse.svg" />
+    <Content Include="webfonts\layout-sidebar-inset.svg" />
+    <Content Include="webfonts\layout-sidebar-reverse.svg" />
+    <Content Include="webfonts\layout-sidebar.svg" />
+    <Content Include="webfonts\layout-split.svg" />
+    <Content Include="webfonts\layout-text-sidebar-reverse.svg" />
+    <Content Include="webfonts\layout-text-sidebar.svg" />
+    <Content Include="webfonts\layout-text-window-reverse.svg" />
+    <Content Include="webfonts\layout-text-window.svg" />
+    <Content Include="webfonts\layout-three-columns.svg" />
+    <Content Include="webfonts\layout-wtf.svg" />
+    <Content Include="webfonts\life-preserver.svg" />
+    <Content Include="webfonts\lightbulb-fill.svg" />
+    <Content Include="webfonts\lightbulb-off-fill.svg" />
+    <Content Include="webfonts\lightbulb-off.svg" />
+    <Content Include="webfonts\lightbulb.svg" />
+    <Content Include="webfonts\lightning-charge-fill.svg" />
+    <Content Include="webfonts\lightning-charge.svg" />
+    <Content Include="webfonts\lightning-fill.svg" />
+    <Content Include="webfonts\lightning.svg" />
+    <Content Include="webfonts\link-45deg.svg" />
+    <Content Include="webfonts\link.svg" />
+    <Content Include="webfonts\linkedin.svg" />
+    <Content Include="webfonts\list-check.svg" />
+    <Content Include="webfonts\list-nested.svg" />
+    <Content Include="webfonts\list-ol.svg" />
+    <Content Include="webfonts\list-stars.svg" />
+    <Content Include="webfonts\list-task.svg" />
+    <Content Include="webfonts\list-ul.svg" />
+    <Content Include="webfonts\list.svg" />
+    <Content Include="webfonts\lock-fill.svg" />
+    <Content Include="webfonts\lock.svg" />
+    <Content Include="webfonts\mailbox.svg" />
+    <Content Include="webfonts\mailbox2.svg" />
+    <Content Include="webfonts\map-fill.svg" />
+    <Content Include="webfonts\map.svg" />
+    <Content Include="webfonts\markdown-fill.svg" />
+    <Content Include="webfonts\markdown.svg" />
+    <Content Include="webfonts\mask.svg" />
+    <Content Include="webfonts\megaphone-fill.svg" />
+    <Content Include="webfonts\megaphone.svg" />
+    <Content Include="webfonts\menu-app-fill.svg" />
+    <Content Include="webfonts\menu-app.svg" />
+    <Content Include="webfonts\menu-button-fill.svg" />
+    <Content Include="webfonts\menu-button-wide-fill.svg" />
+    <Content Include="webfonts\menu-button-wide.svg" />
+    <Content Include="webfonts\menu-button.svg" />
+    <Content Include="webfonts\menu-down.svg" />
+    <Content Include="webfonts\menu-up.svg" />
+    <Content Include="webfonts\mic-fill.svg" />
+    <Content Include="webfonts\mic-mute-fill.svg" />
+    <Content Include="webfonts\mic-mute.svg" />
+    <Content Include="webfonts\mic.svg" />
+    <Content Include="webfonts\minecart-loaded.svg" />
+    <Content Include="webfonts\minecart.svg" />
+    <Content Include="webfonts\moisture.svg" />
+    <Content Include="webfonts\moon-fill.svg" />
+    <Content Include="webfonts\moon-stars-fill.svg" />
+    <Content Include="webfonts\moon-stars.svg" />
+    <Content Include="webfonts\moon.svg" />
+    <Content Include="webfonts\mouse-fill.svg" />
+    <Content Include="webfonts\mouse.svg" />
+    <Content Include="webfonts\mouse2-fill.svg" />
+    <Content Include="webfonts\mouse2.svg" />
+    <Content Include="webfonts\mouse3-fill.svg" />
+    <Content Include="webfonts\mouse3.svg" />
+    <Content Include="webfonts\music-note-beamed.svg" />
+    <Content Include="webfonts\music-note-list.svg" />
+    <Content Include="webfonts\music-note.svg" />
+    <Content Include="webfonts\music-player-fill.svg" />
+    <Content Include="webfonts\music-player.svg" />
+    <Content Include="webfonts\newspaper.svg" />
+    <Content Include="webfonts\node-minus-fill.svg" />
+    <Content Include="webfonts\node-minus.svg" />
+    <Content Include="webfonts\node-plus-fill.svg" />
+    <Content Include="webfonts\node-plus.svg" />
+    <Content Include="webfonts\nut-fill.svg" />
+    <Content Include="webfonts\nut.svg" />
+    <Content Include="webfonts\octagon-fill.svg" />
+    <Content Include="webfonts\octagon-half.svg" />
+    <Content Include="webfonts\octagon.svg" />
+    <Content Include="webfonts\option.svg" />
+    <Content Include="webfonts\outlet.svg" />
+    <Content Include="webfonts\paint-bucket.svg" />
+    <Content Include="webfonts\palette-fill.svg" />
+    <Content Include="webfonts\palette.svg" />
+    <Content Include="webfonts\palette2.svg" />
+    <Content Include="webfonts\paperclip.svg" />
+    <Content Include="webfonts\paragraph.svg" />
+    <Content Include="webfonts\patch-check-fill.svg" />
+    <Content Include="webfonts\patch-check.svg" />
+    <Content Include="webfonts\patch-exclamation-fill.svg" />
+    <Content Include="webfonts\patch-exclamation.svg" />
+    <Content Include="webfonts\patch-minus-fill.svg" />
+    <Content Include="webfonts\patch-minus.svg" />
+    <Content Include="webfonts\patch-plus-fill.svg" />
+    <Content Include="webfonts\patch-plus.svg" />
+    <Content Include="webfonts\patch-question-fill.svg" />
+    <Content Include="webfonts\patch-question.svg" />
+    <Content Include="webfonts\pause-btn-fill.svg" />
+    <Content Include="webfonts\pause-btn.svg" />
+    <Content Include="webfonts\pause-circle-fill.svg" />
+    <Content Include="webfonts\pause-circle.svg" />
+    <Content Include="webfonts\pause-fill.svg" />
+    <Content Include="webfonts\pause.svg" />
+    <Content Include="webfonts\peace-fill.svg" />
+    <Content Include="webfonts\peace.svg" />
+    <Content Include="webfonts\pen-fill.svg" />
+    <Content Include="webfonts\pen.svg" />
+    <Content Include="webfonts\pencil-fill.svg" />
+    <Content Include="webfonts\pencil-square.svg" />
+    <Content Include="webfonts\pencil.svg" />
+    <Content Include="webfonts\pentagon-fill.svg" />
+    <Content Include="webfonts\pentagon-half.svg" />
+    <Content Include="webfonts\pentagon.svg" />
+    <Content Include="webfonts\people-fill.svg" />
+    <Content Include="webfonts\people.svg" />
+    <Content Include="webfonts\percent.svg" />
+    <Content Include="webfonts\person-badge-fill.svg" />
+    <Content Include="webfonts\person-badge.svg" />
+    <Content Include="webfonts\person-bounding-box.svg" />
+    <Content Include="webfonts\person-check-fill.svg" />
+    <Content Include="webfonts\person-check.svg" />
+    <Content Include="webfonts\person-circle.svg" />
+    <Content Include="webfonts\person-dash-fill.svg" />
+    <Content Include="webfonts\person-dash.svg" />
+    <Content Include="webfonts\person-fill.svg" />
+    <Content Include="webfonts\person-lines-fill.svg" />
+    <Content Include="webfonts\person-plus-fill.svg" />
+    <Content Include="webfonts\person-plus.svg" />
+    <Content Include="webfonts\person-square.svg" />
+    <Content Include="webfonts\person-x-fill.svg" />
+    <Content Include="webfonts\person-x.svg" />
+    <Content Include="webfonts\person.svg" />
+    <Content Include="webfonts\phone-fill.svg" />
+    <Content Include="webfonts\phone-landscape-fill.svg" />
+    <Content Include="webfonts\phone-landscape.svg" />
+    <Content Include="webfonts\phone-vibrate-fill.svg" />
+    <Content Include="webfonts\phone-vibrate.svg" />
+    <Content Include="webfonts\phone.svg" />
+    <Content Include="webfonts\pie-chart-fill.svg" />
+    <Content Include="webfonts\pie-chart.svg" />
+    <Content Include="webfonts\pin-angle-fill.svg" />
+    <Content Include="webfonts\pin-angle.svg" />
+    <Content Include="webfonts\pin-fill.svg" />
+    <Content Include="webfonts\pin.svg" />
+    <Content Include="webfonts\pip-fill.svg" />
+    <Content Include="webfonts\pip.svg" />
+    <Content Include="webfonts\play-btn-fill.svg" />
+    <Content Include="webfonts\play-btn.svg" />
+    <Content Include="webfonts\play-circle-fill.svg" />
+    <Content Include="webfonts\play-circle.svg" />
+    <Content Include="webfonts\play-fill.svg" />
+    <Content Include="webfonts\play.svg" />
+    <Content Include="webfonts\plug-fill.svg" />
+    <Content Include="webfonts\plug.svg" />
+    <Content Include="webfonts\plus-circle-dotted.svg" />
+    <Content Include="webfonts\plus-circle-fill.svg" />
+    <Content Include="webfonts\plus-circle.svg" />
+    <Content Include="webfonts\plus-square-dotted.svg" />
+    <Content Include="webfonts\plus-square-fill.svg" />
+    <Content Include="webfonts\plus-square.svg" />
+    <Content Include="webfonts\plus.svg" />
+    <Content Include="webfonts\power.svg" />
+    <Content Include="webfonts\printer-fill.svg" />
+    <Content Include="webfonts\printer.svg" />
+    <Content Include="webfonts\puzzle-fill.svg" />
+    <Content Include="webfonts\puzzle.svg" />
+    <Content Include="webfonts\question-circle-fill.svg" />
+    <Content Include="webfonts\question-circle.svg" />
+    <Content Include="webfonts\question-diamond-fill.svg" />
+    <Content Include="webfonts\question-diamond.svg" />
+    <Content Include="webfonts\question-octagon-fill.svg" />
+    <Content Include="webfonts\question-octagon.svg" />
+    <Content Include="webfonts\question-square-fill.svg" />
+    <Content Include="webfonts\question-square.svg" />
+    <Content Include="webfonts\question.svg" />
+    <Content Include="webfonts\rainbow.svg" />
+    <Content Include="webfonts\receipt-cutoff.svg" />
+    <Content Include="webfonts\receipt.svg" />
+    <Content Include="webfonts\reception-0.svg" />
+    <Content Include="webfonts\reception-1.svg" />
+    <Content Include="webfonts\reception-2.svg" />
+    <Content Include="webfonts\reception-3.svg" />
+    <Content Include="webfonts\reception-4.svg" />
+    <Content Include="webfonts\record-btn-fill.svg" />
+    <Content Include="webfonts\record-btn.svg" />
+    <Content Include="webfonts\record-circle-fill.svg" />
+    <Content Include="webfonts\record-circle.svg" />
+    <Content Include="webfonts\record-fill.svg" />
+    <Content Include="webfonts\record.svg" />
+    <Content Include="webfonts\record2-fill.svg" />
+    <Content Include="webfonts\record2.svg" />
+    <Content Include="webfonts\reply-all-fill.svg" />
+    <Content Include="webfonts\reply-all.svg" />
+    <Content Include="webfonts\reply-fill.svg" />
+    <Content Include="webfonts\reply.svg" />
+    <Content Include="webfonts\rss-fill.svg" />
+    <Content Include="webfonts\rss.svg" />
+    <Content Include="webfonts\rulers.svg" />
+    <Content Include="webfonts\save-fill.svg" />
+    <Content Include="webfonts\save.svg" />
+    <Content Include="webfonts\save2-fill.svg" />
+    <Content Include="webfonts\save2.svg" />
+    <Content Include="webfonts\scissors.svg" />
+    <Content Include="webfonts\screwdriver.svg" />
+    <Content Include="webfonts\search.svg" />
+    <Content Include="webfonts\segmented-nav.svg" />
+    <Content Include="webfonts\server.svg" />
+    <Content Include="webfonts\share-fill.svg" />
+    <Content Include="webfonts\share.svg" />
+    <Content Include="webfonts\shield-check.svg" />
+    <Content Include="webfonts\shield-exclamation.svg" />
+    <Content Include="webfonts\shield-fill-check.svg" />
+    <Content Include="webfonts\shield-fill-exclamation.svg" />
+    <Content Include="webfonts\shield-fill-minus.svg" />
+    <Content Include="webfonts\shield-fill-plus.svg" />
+    <Content Include="webfonts\shield-fill-x.svg" />
+    <Content Include="webfonts\shield-fill.svg" />
+    <Content Include="webfonts\shield-lock-fill.svg" />
+    <Content Include="webfonts\shield-lock.svg" />
+    <Content Include="webfonts\shield-minus.svg" />
+    <Content Include="webfonts\shield-plus.svg" />
+    <Content Include="webfonts\shield-shaded.svg" />
+    <Content Include="webfonts\shield-slash-fill.svg" />
+    <Content Include="webfonts\shield-slash.svg" />
+    <Content Include="webfonts\shield-x.svg" />
+    <Content Include="webfonts\shield.svg" />
+    <Content Include="webfonts\shift-fill.svg" />
+    <Content Include="webfonts\shift.svg" />
+    <Content Include="webfonts\shop-window.svg" />
+    <Content Include="webfonts\shop.svg" />
+    <Content Include="webfonts\shuffle.svg" />
+    <Content Include="webfonts\signpost-2-fill.svg" />
+    <Content Include="webfonts\signpost-2.svg" />
+    <Content Include="webfonts\signpost-fill.svg" />
+    <Content Include="webfonts\signpost-split-fill.svg" />
+    <Content Include="webfonts\signpost-split.svg" />
+    <Content Include="webfonts\signpost.svg" />
+    <Content Include="webfonts\sim-fill.svg" />
+    <Content Include="webfonts\sim.svg" />
+    <Content Include="webfonts\skip-backward-btn-fill.svg" />
+    <Content Include="webfonts\skip-backward-btn.svg" />
+    <Content Include="webfonts\skip-backward-circle-fill.svg" />
+    <Content Include="webfonts\skip-backward-circle.svg" />
+    <Content Include="webfonts\skip-backward-fill.svg" />
+    <Content Include="webfonts\skip-backward.svg" />
+    <Content Include="webfonts\skip-end-btn-fill.svg" />
+    <Content Include="webfonts\skip-end-btn.svg" />
+    <Content Include="webfonts\skip-end-circle-fill.svg" />
+    <Content Include="webfonts\skip-end-circle.svg" />
+    <Content Include="webfonts\skip-end-fill.svg" />
+    <Content Include="webfonts\skip-end.svg" />
+    <Content Include="webfonts\skip-forward-btn-fill.svg" />
+    <Content Include="webfonts\skip-forward-btn.svg" />
+    <Content Include="webfonts\skip-forward-circle-fill.svg" />
+    <Content Include="webfonts\skip-forward-circle.svg" />
+    <Content Include="webfonts\skip-forward-fill.svg" />
+    <Content Include="webfonts\skip-forward.svg" />
+    <Content Include="webfonts\skip-start-btn-fill.svg" />
+    <Content Include="webfonts\skip-start-btn.svg" />
+    <Content Include="webfonts\skip-start-circle-fill.svg" />
+    <Content Include="webfonts\skip-start-circle.svg" />
+    <Content Include="webfonts\skip-start-fill.svg" />
+    <Content Include="webfonts\skip-start.svg" />
+    <Content Include="webfonts\slack.svg" />
+    <Content Include="webfonts\slash-circle-fill.svg" />
+    <Content Include="webfonts\slash-circle.svg" />
+    <Content Include="webfonts\slash-square-fill.svg" />
+    <Content Include="webfonts\slash-square.svg" />
+    <Content Include="webfonts\slash.svg" />
+    <Content Include="webfonts\sliders.svg" />
+    <Content Include="webfonts\smartwatch.svg" />
+    <Content Include="webfonts\snow.svg" />
+    <Content Include="webfonts\snow2.svg" />
+    <Content Include="webfonts\snow3.svg" />
+    <Content Include="webfonts\sort-alpha-down-alt.svg" />
+    <Content Include="webfonts\sort-alpha-down.svg" />
+    <Content Include="webfonts\sort-alpha-up-alt.svg" />
+    <Content Include="webfonts\sort-alpha-up.svg" />
+    <Content Include="webfonts\sort-down-alt.svg" />
+    <Content Include="webfonts\sort-down.svg" />
+    <Content Include="webfonts\sort-numeric-down-alt.svg" />
+    <Content Include="webfonts\sort-numeric-down.svg" />
+    <Content Include="webfonts\sort-numeric-up-alt.svg" />
+    <Content Include="webfonts\sort-numeric-up.svg" />
+    <Content Include="webfonts\sort-up-alt.svg" />
+    <Content Include="webfonts\sort-up.svg" />
+    <Content Include="webfonts\soundwave.svg" />
+    <Content Include="webfonts\speaker-fill.svg" />
+    <Content Include="webfonts\speaker.svg" />
+    <Content Include="webfonts\speedometer.svg" />
+    <Content Include="webfonts\speedometer2.svg" />
+    <Content Include="webfonts\spellcheck.svg" />
+    <Content Include="webfonts\square-fill.svg" />
+    <Content Include="webfonts\square-half.svg" />
+    <Content Include="webfonts\square.svg" />
+    <Content Include="webfonts\stack.svg" />
+    <Content Include="webfonts\star-fill.svg" />
+    <Content Include="webfonts\star-half.svg" />
+    <Content Include="webfonts\star.svg" />
+    <Content Include="webfonts\stars.svg" />
+    <Content Include="webfonts\stickies-fill.svg" />
+    <Content Include="webfonts\stickies.svg" />
+    <Content Include="webfonts\sticky-fill.svg" />
+    <Content Include="webfonts\sticky.svg" />
+    <Content Include="webfonts\stop-btn-fill.svg" />
+    <Content Include="webfonts\stop-btn.svg" />
+    <Content Include="webfonts\stop-circle-fill.svg" />
+    <Content Include="webfonts\stop-circle.svg" />
+    <Content Include="webfonts\stop-fill.svg" />
+    <Content Include="webfonts\stop.svg" />
+    <Content Include="webfonts\stoplights-fill.svg" />
+    <Content Include="webfonts\stoplights.svg" />
+    <Content Include="webfonts\stopwatch-fill.svg" />
+    <Content Include="webfonts\stopwatch.svg" />
+    <Content Include="webfonts\subtract.svg" />
+    <Content Include="webfonts\suit-club-fill.svg" />
+    <Content Include="webfonts\suit-club.svg" />
+    <Content Include="webfonts\suit-diamond-fill.svg" />
+    <Content Include="webfonts\suit-diamond.svg" />
+    <Content Include="webfonts\suit-heart-fill.svg" />
+    <Content Include="webfonts\suit-heart.svg" />
+    <Content Include="webfonts\suit-spade-fill.svg" />
+    <Content Include="webfonts\suit-spade.svg" />
+    <Content Include="webfonts\sun-fill.svg" />
+    <Content Include="webfonts\sun.svg" />
+    <Content Include="webfonts\sunglasses.svg" />
+    <Content Include="webfonts\sunrise-fill.svg" />
+    <Content Include="webfonts\sunrise.svg" />
+    <Content Include="webfonts\sunset-fill.svg" />
+    <Content Include="webfonts\sunset.svg" />
+    <Content Include="webfonts\symmetry-horizontal.svg" />
+    <Content Include="webfonts\symmetry-vertical.svg" />
+    <Content Include="webfonts\table.svg" />
+    <Content Include="webfonts\tablet-fill.svg" />
+    <Content Include="webfonts\tablet-landscape-fill.svg" />
+    <Content Include="webfonts\tablet-landscape.svg" />
+    <Content Include="webfonts\tablet.svg" />
+    <Content Include="webfonts\tag-fill.svg" />
+    <Content Include="webfonts\tag.svg" />
+    <Content Include="webfonts\tags-fill.svg" />
+    <Content Include="webfonts\tags.svg" />
+    <Content Include="webfonts\telegram.svg" />
+    <Content Include="webfonts\telephone-fill.svg" />
+    <Content Include="webfonts\telephone-forward-fill.svg" />
+    <Content Include="webfonts\telephone-forward.svg" />
+    <Content Include="webfonts\telephone-inbound-fill.svg" />
+    <Content Include="webfonts\telephone-inbound.svg" />
+    <Content Include="webfonts\telephone-minus-fill.svg" />
+    <Content Include="webfonts\telephone-minus.svg" />
+    <Content Include="webfonts\telephone-outbound-fill.svg" />
+    <Content Include="webfonts\telephone-outbound.svg" />
+    <Content Include="webfonts\telephone-plus-fill.svg" />
+    <Content Include="webfonts\telephone-plus.svg" />
+    <Content Include="webfonts\telephone-x-fill.svg" />
+    <Content Include="webfonts\telephone-x.svg" />
+    <Content Include="webfonts\telephone.svg" />
+    <Content Include="webfonts\terminal-fill.svg" />
+    <Content Include="webfonts\terminal.svg" />
+    <Content Include="webfonts\text-center.svg" />
+    <Content Include="webfonts\text-indent-left.svg" />
+    <Content Include="webfonts\text-indent-right.svg" />
+    <Content Include="webfonts\text-left.svg" />
+    <Content Include="webfonts\text-paragraph.svg" />
+    <Content Include="webfonts\text-right.svg" />
+    <Content Include="webfonts\textarea-resize.svg" />
+    <Content Include="webfonts\textarea-t.svg" />
+    <Content Include="webfonts\textarea.svg" />
+    <Content Include="webfonts\thermometer-half.svg" />
+    <Content Include="webfonts\thermometer-high.svg" />
+    <Content Include="webfonts\thermometer-low.svg" />
+    <Content Include="webfonts\thermometer-snow.svg" />
+    <Content Include="webfonts\thermometer-sun.svg" />
+    <Content Include="webfonts\thermometer.svg" />
+    <Content Include="webfonts\three-dots-vertical.svg" />
+    <Content Include="webfonts\three-dots.svg" />
+    <Content Include="webfonts\toggle-off.svg" />
+    <Content Include="webfonts\toggle-on.svg" />
+    <Content Include="webfonts\toggle2-off.svg" />
+    <Content Include="webfonts\toggle2-on.svg" />
+    <Content Include="webfonts\toggles.svg" />
+    <Content Include="webfonts\toggles2.svg" />
+    <Content Include="webfonts\tools.svg" />
+    <Content Include="webfonts\tornado.svg" />
+    <Content Include="webfonts\trash-fill.svg" />
+    <Content Include="webfonts\trash.svg" />
+    <Content Include="webfonts\trash2-fill.svg" />
+    <Content Include="webfonts\trash2.svg" />
+    <Content Include="webfonts\tree-fill.svg" />
+    <Content Include="webfonts\tree.svg" />
+    <Content Include="webfonts\triangle-fill.svg" />
+    <Content Include="webfonts\triangle-half.svg" />
+    <Content Include="webfonts\triangle.svg" />
+    <Content Include="webfonts\trophy-fill.svg" />
+    <Content Include="webfonts\trophy.svg" />
+    <Content Include="webfonts\tropical-storm.svg" />
+    <Content Include="webfonts\truck-flatbed.svg" />
+    <Content Include="webfonts\truck.svg" />
+    <Content Include="webfonts\tsunami.svg" />
+    <Content Include="webfonts\tv-fill.svg" />
+    <Content Include="webfonts\tv.svg" />
+    <Content Include="webfonts\twitch.svg" />
+    <Content Include="webfonts\twitter.svg" />
+    <Content Include="webfonts\type-bold.svg" />
+    <Content Include="webfonts\type-h1.svg" />
+    <Content Include="webfonts\type-h2.svg" />
+    <Content Include="webfonts\type-h3.svg" />
+    <Content Include="webfonts\type-italic.svg" />
+    <Content Include="webfonts\type-strikethrough.svg" />
+    <Content Include="webfonts\type-underline.svg" />
+    <Content Include="webfonts\type.svg" />
+    <Content Include="webfonts\ui-checks-grid.svg" />
+    <Content Include="webfonts\ui-checks.svg" />
+    <Content Include="webfonts\ui-radios-grid.svg" />
+    <Content Include="webfonts\ui-radios.svg" />
+    <Content Include="webfonts\umbrella-fill.svg" />
+    <Content Include="webfonts\umbrella.svg" />
+    <Content Include="webfonts\union.svg" />
+    <Content Include="webfonts\unlock-fill.svg" />
+    <Content Include="webfonts\unlock.svg" />
+    <Content Include="webfonts\upc-scan.svg" />
+    <Content Include="webfonts\upc.svg" />
+    <Content Include="webfonts\upload.svg" />
+    <Content Include="webfonts\vector-pen.svg" />
+    <Content Include="webfonts\view-list.svg" />
+    <Content Include="webfonts\view-stacked.svg" />
+    <Content Include="webfonts\vinyl-fill.svg" />
+    <Content Include="webfonts\vinyl.svg" />
+    <Content Include="webfonts\voicemail.svg" />
+    <Content Include="webfonts\volume-down-fill.svg" />
+    <Content Include="webfonts\volume-down.svg" />
+    <Content Include="webfonts\volume-mute-fill.svg" />
+    <Content Include="webfonts\volume-mute.svg" />
+    <Content Include="webfonts\volume-off-fill.svg" />
+    <Content Include="webfonts\volume-off.svg" />
+    <Content Include="webfonts\volume-up-fill.svg" />
+    <Content Include="webfonts\volume-up.svg" />
+    <Content Include="webfonts\vr.svg" />
+    <Content Include="webfonts\wallet-fill.svg" />
+    <Content Include="webfonts\wallet.svg" />
+    <Content Include="webfonts\wallet2.svg" />
+    <Content Include="webfonts\watch.svg" />
+    <Content Include="webfonts\water.svg" />
+    <Content Include="webfonts\whatsapp.svg" />
+    <Content Include="webfonts\wifi-1.svg" />
+    <Content Include="webfonts\wifi-2.svg" />
+    <Content Include="webfonts\wifi-off.svg" />
+    <Content Include="webfonts\wifi.svg" />
+    <Content Include="webfonts\wind.svg" />
+    <Content Include="webfonts\window-dock.svg" />
+    <Content Include="webfonts\window-sidebar.svg" />
+    <Content Include="webfonts\window.svg" />
+    <Content Include="webfonts\wrench.svg" />
+    <Content Include="webfonts\x-circle-fill.svg" />
+    <Content Include="webfonts\x-circle.svg" />
+    <Content Include="webfonts\x-diamond-fill.svg" />
+    <Content Include="webfonts\x-diamond.svg" />
+    <Content Include="webfonts\x-octagon-fill.svg" />
+    <Content Include="webfonts\x-octagon.svg" />
+    <Content Include="webfonts\x-square-fill.svg" />
+    <Content Include="webfonts\x-square.svg" />
+    <Content Include="webfonts\x.svg" />
+    <Content Include="webfonts\youtube.svg" />
+    <Content Include="webfonts\zoom-in.svg" />
+    <Content Include="webfonts\zoom-out.svg" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\icons-1.4.0\font\bootstrap-icons.json" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <EntityDeploy Include="Common\DB\dbRedLineLankaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbRedLineLankaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Common\DB\dbRedLineLankaModel.edmx.diagram">
+      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Layout\jquery.autosize.js" />
+    <Content Include="Scripts\Layout\jquery.customSelect.js" />
+    <Content Include="Scripts\Layout\jquery.nicescroll.js" />
+    <Content Include="Scripts\Layout\jquery.placeholder.js" />
+    <Content Include="Scripts\Layout\jquery.scrollTo.js" />
+    <Content Include="Scripts\Layout\jquery.slimscroll.js" />
+    <Content Include="Scripts\Layout\scripts.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Base\Views\Home\Error.cshtml" />
+    <Content Include="Areas\Base\Views\Home\_ChangePassword.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRoles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRoles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRoles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRoles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRoles\_ChildIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\_ChildCreate.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\_ChildDetails.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\_ChildIndex.cshtml" />
+    <Content Include="Areas\Base\Views\DashBoard\Home.cshtml" />
+    <Content Include="fonts\ElegantIcons.eot" />
+    <Content Include="fonts\ElegantIcons.ttf" />
+    <Content Include="fonts\ElegantIcons.woff" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Local Profile.pubxml" />
+    <None Include="Properties\PublishProfiles\Local System Host.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\dsReports.xsc">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\dsReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReports.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\dsReports.xss">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Content>
+    <Content Include="Scripts\FireWorks.js" />
+    <Content Include="Scripts\jquery-ui-MonthPicker.js" />
+    <Content Include="Scripts\jquery-ui-MonthPicker.min.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\jquery.webcam.js" />
+    <Content Include="Scripts\jscam.swf" />
+    <Content Include="Scripts\jscam_canvas_only.swf" />
+    <Content Include="Scripts\Notification.js" />
+    <Content Include="Scripts\PopUpSelector.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\Snow.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Web.Live.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="webfonts\bootstrap-icons.woff" />
+    <Content Include="webfonts\bootstrap-icons.woff2" />
+    <Content Include="webfonts\ElegantIcons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Base\Views\CsiItemsVM\" />
+    <Folder Include="Areas\Base\Views\Mail\" />
+    <Folder Include="bin\" />
+    <Folder Include="Content\Images\Progress\" />
+    <Folder Include="Content\themes\smoothness\images\" />
+    <Folder Include="obj\" />
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Live|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>24368</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:24368/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties content_4bootstrap-grid_1css_1map__JsonSchema="https://json.schemastore.org/schema-org-place" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

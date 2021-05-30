@@ -1,0 +1,53 @@
+﻿@model RedLineLanka_Enterprise.Areas.Admin.Models.UserVM
+
+@{
+    ViewBag.Title = "User Details";
+}
+
+<div>
+    <hr />
+    @using (Html.BeginForm("Delete", "Users"))
+    {
+        @Html.HiddenFor(model => model.UserID)
+        @Html.HiddenFor(model => model.RowVersion)
+        @Html.AntiForgeryToken()
+        <p>
+            <div class="d-grid gap-2 d-md-block">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }, new { @class = "btn btn-primary btn-sm", style = "min-width:75px" })
+                @Html.ConfirmSubmitButton("<span class='fas fa-trash-alt'></span> Delete", "Are you sure you want to delete?", "Confirm user deletion",
+                 "<span class='fas fa-trash-alt'></span> Delete", new { @class = "btn btn-danger btn-sm" }, "btn btn-danger btn-sm")
+            </div>
+        </p>
+    }
+
+    <div class="form-horizontal">
+        <div class="form-group row">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DetailsViewFor(model => model.UserName)
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.EmployeeID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DetailsViewFor(model => model.EmpDspStr)
+            </div>
+        </div>
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DetailsViewFor(model => model.Status)
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ChildContent">
+    @{ Html.RenderAction("ChildIndex", new { id = Model.UserID }); }
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

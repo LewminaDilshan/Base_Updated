@@ -1,0 +1,24 @@
+﻿@model RedLineLanka_Enterprise.Areas.Admin.Models.UserRoleVM
+
+@using (Html.BeginForm())
+{
+    <br />
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.UserID)
+        @Html.HiddenFor(model => model.UserRoleID)
+
+        <div class="form-group btn-sm">
+            @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.DetailsViewFor(model => model.RoleName)
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

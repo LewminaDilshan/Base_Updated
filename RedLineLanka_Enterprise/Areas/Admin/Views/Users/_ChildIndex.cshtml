@@ -1,0 +1,53 @@
+﻿@model IEnumerable<RedLineLanka_Enterprise.Areas.Admin.Models.UserRoleVM>
+
+<hr />
+<h3>Roles</h3>
+
+<table class="mGrid">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleName)
+            </th>
+            @{
+                if (ViewBag.IsToEdit)
+                {
+                    <th class="btn-1">
+                        @Html.NoEncodeActionLink("<span class='fas fa-plus' style='color:white'></span>", "Add", "ChildCreate", routeValues: new { userID = ViewBag.UserID }, htmlAttributes: new { data_popup_editor = "", @class = "btn btn-primary pull-right btn-sm", data_title = "Create User Role" })
+                    </th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoleName)
+                </td>
+                @{
+                    if (ViewBag.IsToEdit)
+                    {
+                        <td class="btn-2">
+                            <div class="d-grid gap-2 d-md-block pull-right">
+                                @using (Html.BeginForm("ChildDelete", "Users", new { id = item.UserRoleID }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.NoEncodeActionLink("<span class='fas fa-info-circle'></span>", "Details", "ChildDetails", routeValues: new { id = item.UserRoleID }, htmlAttributes: new { data_popup_editor = "", @class = "btn btn-secondary btn-sm", data_title = "User Role Details" })
+                                    @Html.ConfirmSubmitButton("<span class='fas fa-trash-alt'></span>", "Are you sure you want to delete?", "Confirm user role deletion",
+                                        "<span class='fas fa-trash-alt'></span> Delete", new { data_popup_delete = "", @class = "btn btn-danger btn-sm" }, "btn btn-danger btn-sm")
+                                }
+                            </div>
+                        </td>
+                    }
+                }
+            </tr>
+                    }
+    </tbody>
+</table>
+
+@if (ViewBag.IsToEdit)
+{
+    Html.RenderPartial("~/Areas/Base/Views/Shared/_PartialAlert.cshtml");
+}

@@ -1,0 +1,111 @@
+﻿@model RedLineLanka_Enterprise.Areas.Base.Models.DashBoardVM
+
+<link href="~/Content/ChartsStyle.css" rel="stylesheet" />
+<script src="~/Scripts/Chart.custom.js"></script>
+
+@{ 
+    var strDate = DateTime.Now.ToString("dd-MMM-yyyy");
+}
+
+<body style="background-color: #1E1A19;">
+    <div class="container-fluid">
+        <div class="container-fill">
+            <div class="row text-center chart-page-header">
+                <h3>Today Activities : (@strDate)</h3>
+            </div>
+            <div class="row chart-parent-row">
+                <div class="col-lg-4 col-md-6 chart-parent">
+                    <h3>Income</h3>
+                    <div class="chart-container">
+                        <canvas id="chart1"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 chart-parent">
+                    <h3>Exams</h3>
+                    <div class="chart-container">
+                        <canvas id="chart3"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 chart-parent">
+                    <h3>Enrollments</h3>
+                    <div class="chart-container">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row chart-parent-row">
+                <div class="col-md-4 text-center">
+                    <div class="info-card">
+                        <h4>@Model.TotalOngoingActiveStuds</h4>
+                        <h5>Total Students</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="info-card">
+                        <h4>@Model.TotalOngoingActiveStuds_FT</h4>
+                        <h5>Full Time Students</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="info-card">
+                        <h4>@Model.TotalOngoingActiveStuds_PT</h4>
+                        <h5>Part Time Student</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row chart-parent-row">
+                <div class="col-md-4 text-center">
+                    <div class="info-card">
+                        <h4>@Model.TotalNewActivStuds</h4>
+                        <h5>New Enrollments</h5>
+                        <h5>(Current Year)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="info-card">
+                        <h4>@Model.TotalNewActivStuds_FT</h4>
+                        <h5>New Full Time Enrollments</h5>
+                        <h5>(Current Year)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="info-card">
+                        <h4>@Model.TotalNewActivStuds_PT</h4>
+                        <h5>New Part Time Enrollments</h5>
+                        <h5>(Current Year)</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row chart-parent-row">
+                <div class="col-md-4 chart-parent">
+                    <h3>Published Results</h3>
+                    <div class="chart-container">
+                        <canvas id="chart4"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-4 chart-parent">
+                    <h3>Inquiries</h3>
+                    <div class="chart-container">
+                        <canvas id="chart5"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-4 chart-parent">
+                    <h3>Lecture Sessions</h3>
+                    <div class="chart-container">
+                        <canvas id="chart6"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+@Html.CreateChart("chart1", Model.HomeTodayIncome, "options.scales.yAxes[0].ticks.callback = ChartAxis_Y")
+@Html.CreateChart("chart2", Model.HomeTodayEnroll)
+@Html.CreateChart("chart3", Model.HomeTodayExam)
+@Html.CreateChart("chart4", Model.HomeTodayPublishedResults)
+@Html.CreateChart("chart5", Model.HomeTodayInquiries)
+@Html.CreateChart("chart6", Model.HomeTodayLectureSessions)

@@ -1,0 +1,151 @@
+﻿@{
+    var lstMenus = Html.GetAccessibleMenus();
+    var lstFirst = lstMenus.Where(x => x.ParentMenuID == null).OrderBy(x => x.DisplaySequence).ToList();
+}
+
+@helper ThirdLevel(List<RedLineLanka_Enterprise.Common.DB.Menu> FullList, int menuID, int level)
+{
+    var lst = FullList.Where(x => x.ParentMenuID == menuID).OrderBy(x => x.DisplaySequence).ToList();
+
+    foreach (var item in lst)
+    {
+        if (item.Type == "I")
+        {
+            <li class="wraptext">
+                <a class="" href="@Url.Action(item.Action, item.Controller, new { area = item.Area })">
+                    @if (item.Icon.IsBlank())
+                    {
+                        <i class="fas fa-ruler-horizontal"></i>
+                    }
+                    else
+                    {
+                        <i class="fas fa-@item.Icon"></i>
+                    }
+                    <span style="margin-left:5px;padding-right:5px;">@item.Text</span>
+                </a>
+            </li>
+        }
+        else if (item.Type == "M")
+        {
+            <li class="sub-menu dropdown-submenu wraptext">
+                <a href="javascript:;" class="">
+                    @if (item.Icon.IsBlank())
+                    {
+                        <i class="fas fa-ruler-horizontal"></i>
+                    }
+                    else
+                    {
+                        <i class="fas fa-@item.Icon"></i>
+                    }
+                    <span style="margin-left:5px;padding-right:5px;">@item.Text</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="">
+                    @ThirdLevel(FullList, item.MenuID, level + 1)
+                </ul>
+            </li>
+        }
+    }
+}
+
+@helper SecondLevel(List<RedLineLanka_Enterprise.Common.DB.Menu> FullList, int menuID)
+{
+    var lst = FullList.Where(x => x.ParentMenuID == menuID).OrderBy(x => x.DisplaySequence).ToList();
+
+    foreach (var item in lst)
+    {
+        if (item.Type == "I")
+        {
+            <li class="wraptext">
+                <a class="" href="@Url.Action(item.Action, item.Controller, new { area = item.Area })">
+                    @if (item.Icon.IsBlank())
+                    {
+                        <i class="fas fa-ruler-horizontal"></i>
+                    }
+                    else
+                    {
+                        <i class="@item.Icon"></i>
+                    }
+                    <span style="margin-left:5px;padding-right:5px;">@item.Text</span>
+                </a>
+            </li>
+        }
+        else if (item.Type == "M")
+        {
+            <li class="sub-menu wraptext">
+                <a href="javascript:;" class="">
+                    @if (item.Icon.IsBlank())
+                    {
+                        <i class="fas fa-ruler-horizontal"></i>
+                    }
+                    else
+                    {
+                        <i class="@item.Icon"></i>
+                    }
+                    <span style="margin-left:5px;padding-right:5px;">@item.Text</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="">
+                    @ThirdLevel(FullList, item.MenuID, 3)
+                </ul>
+            </li>
+        }
+    }
+}
+
+@helper FirstLevel(List<RedLineLanka_Enterprise.Common.DB.Menu> lstMenus)
+{
+    var lstFirst = lstMenus.Where(x => x.ParentMenuID == null).OrderBy(x => x.DisplaySequence).ToList();
+
+    if (lstFirst.Count > 0)
+    {
+        @*<li class="divider-vertical"></li>*@
+    }
+
+    foreach (var item in lstFirst)
+    {
+        if (item.Type == "I")
+        {
+            <li class="wraptext">
+                <a class="" href="@Url.Action(item.Action, item.Controller, new { area = item.Area })">
+                    @if (item.Icon.IsBlank())
+                    {
+                        <i class="fas fa-infinity"></i>
+                    }
+                    else
+                    {
+                        <i class="@item.Icon"></i>
+                    }
+                    <span style="margin-left:5px;padding-right:5px;">@item.Text</span>
+                </a>
+            </li>
+        }
+        else if (item.Type == "M")
+        {
+            <li class="sub-menu wraptext">
+                <a href="javascript:;" class="" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                    @if (item.Icon.IsBlank())
+                    {
+                        <i class="fas fa-infinity"></i>
+                    }
+                    else
+                    {
+                        <i class="@item.Icon"></i>
+                    }
+                    <span style="margin-left:5px;padding-right:5px;">@item.Text</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    @SecondLevel(lstMenus, item.MenuID)
+                </ul>
+            </li>
+        }
+
+    }
+}
+
+<ul class="sidebar-menu">
+    @{
+        @FirstLevel(lstMenus)
+    }
+</ul>

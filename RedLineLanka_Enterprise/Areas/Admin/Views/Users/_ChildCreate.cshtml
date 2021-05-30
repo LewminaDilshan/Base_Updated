@@ -1,0 +1,35 @@
+﻿@model RedLineLanka_Enterprise.Areas.Admin.Models.UserRoleVM
+
+@{ Html.RenderPartial("~/Areas/Base/Views/Shared/_PartialAlert.cshtml"); }
+
+@using (Html.BeginForm())
+{
+    <br />
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.UserID)
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.RoleID, htmlAttributes: new { @class = "control-label col-md-4", style = "font-size:15px" })
+            <div class="col-md-8">
+                @Html.PopUpSelectorFor(model => model.RoleID, "Base", "Data", "GetUserRoles", new { @class = "form-control" }, "Please select a User Role", new { idsToExcluede = ViewBag.UserRoles }, dspFormat: "{1}", hiddenIndices: "0")
+                @Html.ValidationMessageFor(model => model.RoleID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+        <div style="text-align:right">
+            <p>
+                <div class="d-grid gap-2 d-md-block">
+                    <input type="submit" value="Save" class="btn btn-primary btn-sm" style="min-width:75px" />
+                    <input type="button" value="Cancel" class="btn btn-secondary btn-sm" style="min-width:75px" />
+                </div>
+            </p>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

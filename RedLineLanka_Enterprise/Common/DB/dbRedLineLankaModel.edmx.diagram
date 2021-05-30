@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b392324910aa4585b2f99e7fb8d6779d" Name="Diagram1">
+        <EntityTypeShape EntityType="dbRedlineLanka.Menu" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRedlineLanka.Parameter" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRedlineLanka.Role" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRedlineLanka.UserRole" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRedlineLanka.User" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="dbRedlineLanka.FK_MenusMenus" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRedlineLanka.FK_UserRolesRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRedlineLanka.FK_UserRolesUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRedlineLanka.RoleMenuAccesses" ></AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

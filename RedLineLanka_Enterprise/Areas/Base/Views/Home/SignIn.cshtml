@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/fontawesome")
+    <link href="~/Content/Login/bootstrap.4.1.3.min.css" rel="stylesheet" />
+    <link href="~/Content/Login/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="card-header">
+                        @*<img src="@Url.Content("~/Content/Images/nibm.png")" class="img-responsive" style="width:300px;margin: 7px 0 7px 0;" />*@
+                        @*<div class="d-flex justify-content-end social_icon">
+                            <img src="@Url.Content("~/Content/Images/emblem.png")" class="img-responsive" style="width:50px" />
+                        </div>*@
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" id="UserName" name="UserName" class="form-control" placeholder="username">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" id="PassWord" name="PassWord" class="form-control" placeholder="password">
+                        </div>
+                        <div class="row align-items-center remember">
+                            <input type="checkbox" id="RememberMe" name="RememberMe" value="true"><input name="RememberMe" type="hidden" value="false">Remember Me
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center">
+                            @{ Html.RenderPartial("~/Areas/Base/Views/Shared/_PartialAlert.cshtml"); }
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                        @*<img src="@Url.Content("~/Content/Images/circuitoLogo11.png")" class="img-responsive" style="width:350px" />*@
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

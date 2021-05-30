@@ -1,0 +1,56 @@
+﻿@model RedLineLanka_Enterprise.Common.BaseViewModel<RedLineLanka_Enterprise.Areas.Admin.Models.UserVM>
+
+@{
+    ViewBag.Title = "Users";
+    var grid = Model.GetGrid();
+}
+
+@{
+    var srchOpts = new List<SelectListItem>();
+    srchOpts.Add(new SelectListItem { Text = "User Name", Value = "UserName" });
+    srchOpts.Add(new SelectListItem { Text = "Employee", Value = "EmpDspStr" });
+}
+
+<p>
+    @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary btn-sm", style = "min-width:75px" })
+</p>
+
+@using (Html.BeginForm("Index", null, FormMethod.Get))
+{
+    <div class="form-horizontal row">
+        <div class="col-md-4">
+            <div class="form-group row">
+                @Html.Label("Search By", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.DropDownList("FilterBy", new SelectList(srchOpts, "Value", "Text"), htmlAttributes: new { @class = "form-control  form-control-sm" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.Filter, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <input type="submit" value="Search" name="Search" class="btn btn-outline-secondary btn-sm" />
+        </div>
+    </div>
+    <hr />
+
+    <div id="content">
+        @grid.GetHtml(
+        tableStyle: "mGrid no-foot",
+        mode: WebGridPagerModes.All,
+        columns: grid.Columns(
+            grid.Column(null, null, format: (item) => Html.NoEncodeActionLink("<span class='fas fa-eye' style='color:black'></span>", "View Details", "Details", routeValues: new { id = item.UserID }, htmlAttributes: new { @class = "btn btn-warning btn-sm" }), style: "btn-1"),
+            grid.SortColumn(columnName: "UserName", header: "User Name"),
+            grid.SortColumn(columnName: "EmpDspStr", header: "Employee"),
+            grid.SortColumn(columnName: "Status", header: "Status", format: (item) => ((Enum)item.Status).ToEnumChar())))
+
+        <div id="content-footer">
+            @grid.PagerList(WebGridPagerModes.All, Model.PageSize, Model.TotalRecords)
+        </div>
+    </div>
+}

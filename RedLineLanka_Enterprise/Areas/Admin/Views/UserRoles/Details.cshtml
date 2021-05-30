@@ -1,0 +1,50 @@
+﻿@model RedLineLanka_Enterprise.Areas.Admin.Models.RoleVM
+
+@{
+    ViewBag.Title = "User Role Details";
+}
+
+<div>
+    <hr />
+    @using (Html.BeginForm("Delete", "UserRoles"))
+    {
+        @Html.HiddenFor(model => model.RoleID)
+        @Html.HiddenFor(model => model.RowVersion)
+        @Html.HiddenFor(model => model.MenusJson)
+        @Html.AntiForgeryToken()
+        <p>
+            <div class="d-grid gap-2 d-md-block">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.RoleID }, new { @class = "btn btn-primary btn-sm", style = "min-width:75px" })
+                @Html.ConfirmSubmitButton("Delete", "Are you sure you want to delete?", "Confirm user role deletion",
+                 "<span class='glyphicon glyphicon-trash'></span> Delete", new { @class = "btn btn-danger btn-sm", style = "min-width:75px" })
+            </div>
+        </p>
+    }
+
+    <div class="form-horizontal">
+        <div class="form-group row">
+            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DetailsViewFor(model => model.Code)
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DetailsViewFor(model => model.Name)
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ChildContent">
+    @{ Html.RenderAction("ChildIndex", new { id = Model.RoleID }); }
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/admin/userrole")
+}

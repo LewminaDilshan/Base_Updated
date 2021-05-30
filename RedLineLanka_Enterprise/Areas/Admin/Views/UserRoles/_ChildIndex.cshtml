@@ -1,0 +1,102 @@
+﻿@model List<RedLineLanka_Enterprise.Common.DB.Menu>
+
+<style type="text/css">
+    ul.tree, ul.tree ul {
+        list-style-type: none;
+        background: url(/Content/Images/vline.png) repeat-y;
+        margin: 0;
+        padding: 0;
+    }
+
+        ul.tree ul {
+            margin-left: 10px;
+        }
+
+        ul.tree li {
+            margin: 5px 0 5px 0;
+            padding: 0 12px;
+            line-height: 20px;
+            background: url(/Content/Images/node.png) no-repeat;
+            color: #369;
+            font-weight: bold;
+        }
+
+            ul.tree li:last-child {
+                background: #fff url(/Content/Images/lastnode.png) no-repeat;
+            }
+
+        ul.tree span.bi {
+            cursor: pointer;
+        }
+</style>
+
+<br />
+<h3>Menus</h3>
+
+<p>
+    <div class="d-grid gap-2 d-md-block">
+        <button id="btnExpAll" type="button" class="btn btn-outline-secondary btn-sm">Expand All</button>
+        <button id="btnColapsAll" type="button" class="btn btn-outline-secondary btn-sm">Collapse All</button>
+        @if (ViewBag.IsToEdit)
+        {
+            <button id="btnCheckAll" type="button" class="btn btn-outline-secondary btn-sm">Check All</button>
+            <button id="btnUnchkAll" type="button" class="btn btn-outline-secondary btn-sm">Uncheck All</button>
+        }
+    </div>
+</p>
+
+@{
+    var lstMenus = Html.GetAllMenus();
+}
+
+@helper IterateMenus(List<RedLineLanka_Enterprise.Common.DB.Menu> FullList, int? menuID)
+{
+    var lst = FullList.Where(x => x.ParentMenuID == menuID).OrderBy(x => x.DisplaySequence).ToList();
+
+    foreach (var item in lst)
+    {
+        if (item.Type == "I")
+        {
+            var isHideLst = FullList.Where(x => x.ParentMenuID == item.MenuID).OrderBy(x => x.DisplaySequence).ToList();
+            if (isHideLst.Count() > 0)
+            {
+                <li data-menu-id="@item.MenuID">
+                    <span class="bi bi-caret-right-fill" aria-hidden="true"></span> <span class="bi bi-square" aria-hidden="true"></span> @item.Text
+                    <ul style="display:none">
+                        @IterateMenus(FullList, item.MenuID)
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li data-menu-id="@item.MenuID"><span class="bi bi-square" aria-hidden="true"></span> @item.Text</li>
+            }
+        }
+        else if (item.Type == "D")
+        {
+            <li data-menu-id="@item.MenuID"><span class="bi bi-square" aria-hidden="true"></span> ----- Divider -----</li>
+        }
+        else if (item.Type == "M")
+        {
+            <li data-menu-id="@item.MenuID">
+                <span class="bi bi-caret-right-fill" aria-hidden="true"></span> <span class="bi bi-square" aria-hidden="true"></span> @item.Text
+                <ul style="display:none">
+                    @IterateMenus(FullList, item.MenuID)
+                </ul>
+            </li>
+        }
+    }
+}
+
+<div>
+    <ul class="tree" id="tree">
+        @{
+            @IterateMenus(lstMenus, null)
+        }
+    </ul>
+</div>
+
+@if (ViewBag.IsToEdit)
+{
+    Html.RenderPartial("~/Areas/Base/Views/Shared/_PartialAlert.cshtml");
+}

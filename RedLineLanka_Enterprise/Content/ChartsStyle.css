@@ -1,0 +1,136 @@
+﻿.chart-parent {
+    border: 1px solid #fed189;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px
+}
+
+    .chart-parent > h3 {
+        text-align: center;
+        color: #fed189;
+        margin: 10px 0 10px 0;
+    }
+
+.chart-parent-row {
+    overflow: hidden;
+    border: 1px solid #fed189;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto
+}
+
+.info-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: #1a2732;
+    margin-left: -5px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    width: 360px;
+    height: 100px;
+    display: inline-block;
+}
+
+    .info-card > h4 {
+        color: #fed189 !important;
+        padding-bottom: 10px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card > h5 {
+        color: white;
+        text-shadow: 3px 2px #3C3C3C;
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: -5px;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+.info-card-small {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: #1a2732;
+    margin-left: -5px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    padding: 10px;
+    display: inline-block;
+}
+
+    .info-card-small > h4 {
+        color: #fed189 !important;
+        padding-bottom: 10px;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card-small > h5 {
+        color: white;
+        text-shadow: 3px 2px #3C3C3C;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: -5px;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card-small > h6 {
+        color: white;
+        text-shadow: 3px 2px #3C3C3C;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.dashborad-form * input {
+    height: 22px;
+    background-color: #1a2732;
+    color: #fed189;
+    margin-bottom: 10px;
+    text-align:center;
+}
+
+    .dashborad-form * input.btn-warning {
+        height: 22px;
+        background-color: #fed189;
+        color: #1a2732;
+        font-weight: bold;
+    }
+
+.dashborad-form > label {
+    height: 22px;
+    color: #fed189;
+    margin-bottom: 10px;
+}
+
+.chart-page-header > h3 {
+    color: white;
+    font-weight: bold;
+}
+
+.chart-date-label {
+    white-space: nowrap;
+    margin-right: 5px
+}
+
+.header-date {
+    color: #fed189;
+}

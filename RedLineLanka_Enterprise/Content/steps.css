@@ -1,0 +1,121 @@
+﻿.vcv-timeline {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 830px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    color: #0c0c0c;
+}
+
+.vcv-timeline-item {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    padding: 0;
+}
+
+    .vcv-timeline-item::before,
+    .vcv-timeline-item::after {
+        content: "";
+    }
+
+    .vcv-timeline-item::before {
+        content: attr(data-step);
+        display: -webkit-inline-box;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-flex: 0;
+        flex: 0 0 32px;
+        height: 32px;
+        margin: 0 10px 0 0;
+        border-radius: 50%;
+        border: 2px solid #a7a7a7;
+        color: #000;
+    }
+
+    .vcv-timeline-item::after {
+        height: 2px;
+        background: #a7a7a7;
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .vcv-timeline-item:last-of-type {
+        -webkit-box-flex: 0;
+        flex: 0 0 120px;
+    }
+
+        .vcv-timeline-item:last-of-type::after {
+            display: none;
+        }
+
+    .vcv-timeline-item.vcv-step-done::before {
+        content: "";
+        border-color: #aace35;
+        background: #aace35 url("data:image/svg+xml,%0A%3Csvg width='14px' height='11px' viewBox='0 0 14 11' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Activation-Theme-to-Premium' transform='translate(-827.000000, -183.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Activation-02' transform='translate(342.000000, 172.000000)'%3E%3Cg id='Navigation' transform='translate(44.000000, 0.000000)'%3E%3Cg id='check' transform='translate(441.000000, 11.000000)'%3E%3Cpolygon id='Path' points='11.8606017 0 4.86058121 6.82615443 2.13952103 4.17292819 0 6.25973131 4.8606221 11 14 2.08684301'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat center;
+        background-size: 40%;
+    }
+
+    .vcv-timeline-item.vcv-step-done::after {
+        background: #aace35;
+    }
+
+    .vcv-timeline-item.vcv-step-pendding::before {
+        content: attr(data-step);
+        color: #000;
+        border-color: #ffd800;
+        background: #ffd800;
+        background-size: 40%;
+    }
+
+    .vcv-step-pendding {
+        font-weight: bold;
+    }
+
+/*  .vcv-timeline-item.vcv-step-pendding::after {
+        background: #ffd800;
+    }*/
+
+@media screen and (max-width: 768px) {
+    .vcv-timeline {
+        margin-bottom: 50px;
+    }
+
+    .vcv-timeline-item {
+        position: relative;
+    }
+
+        .vcv-timeline-item span {
+            text-align: left;
+            margin: 10px 0 0;
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            left: 2px;
+        }
+
+        .vcv-timeline-item:last-of-type {
+            -webkit-box-flex: 0;
+            flex: 0 0 auto;
+            margin: 0 30px 0 0;
+        }
+
+        .vcv-timeline-item::before {
+            margin: 0;
+        }
+
+        .vcv-timeline-item::after {
+            -webkit-box-flex: 0;
+            flex: 0 1 auto;
+        }
+}

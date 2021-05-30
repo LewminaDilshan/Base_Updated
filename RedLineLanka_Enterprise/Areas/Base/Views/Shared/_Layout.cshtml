@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@(ViewBag.Title ?? "NEON") - Osill Pharmacy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href=@Url.Content("~/Content/themes/base/all.css") rel="stylesheet" />
+    @Styles.Render("~/Content/jqueryuitimepicker")
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/custom")
+    @Styles.Render("~/Content/fontawesome")
+    @Styles.Render("~/Content/bootstrapicons")
+    @Styles.Render("~/Content/Layout/LayoutBundle")
+    @Styles.Render("~/Content/bootstrapmin")
+    @RenderSection("styles", required: false)
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/chart")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/layout")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/custom?v=1")
+
+    @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    @RenderSection("scripts", required: false)
+
+    @{ var sideMenuWidth = "200px";
+        var hideIt = ViewBag.HideMenu ?? false; }
+
+    <script type="text/javascript">
+        AppRoot = "@Url.Content("~/")";
+        SideMenuWidth = "@sideMenuWidth";
+    </script>
+    <style>
+        :root {
+            --menu-width: @(sideMenuWidth);
+            --menu-width-neg: -@(sideMenuWidth);
+        }
+    </style>
+</head>
+<body>
+    <div id="dspProgress" style="display:none">
+        <div id="dspProgressBackgroundFilter">
+        </div>
+        <div id="dspProgressMessage">
+            <img height="100" width="100" />
+        </div>
+    </div>
+    <!-- container section start -->
+    <section id="container" class="@(hideIt ? "sidebar-closed sidebar-hidden": "")">
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder"
+                     data-original-title="Toggle Navigation"
+                     data-placement="bottom" style="margin-top:-5px">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+            <!--logo start-->
+            <a href="@Url.Action("Home", "DashBoard", new { area = "Base" })" class="logo">Osill Pharmacy<span style="color:white"> - </span><span class="lite">NEON</span></a>
+            <!--logo end-->
+
+            <div class="top-nav notification-row">
+                <!-- notificatoin dropdown start-->
+                @Html.Partial("~/Areas/Base/Views/Shared/_PartialNotifications.cshtml")
+                <!-- notificatoin dropdown end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse @(hideIt ? "hide-sidebar-menu" : "show-sidebar-menu")"
+                 style="display:inline-block;margin-left:@(hideIt ? "-" + sideMenuWidth + "px" : "0px");width: auto !important;">
+                <!-- sidebar menu start-->
+                @Html.Partial("~/Areas/Base/Views/Shared/_PartialMenu.cshtml")
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content" stye="margin-left:@(hideIt ? "0px" : sideMenuWidth + "px")">
+            <section class="wrapper">
+                @if (ViewBag.Title != null)
+                {
+                <div class="row content-header">
+                    <div class="col-lg-12">
+                        <h3 class="page-header"><span class="fa fa-laptop"></span> @ViewBag.Title</h3>
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb" style="background-color:#fcfcfc !important; box-shadow: 0 3px 3px 3px rgba(0,0,0,0.1); padding-top:7px !important">
+                                <li class="breadcrumb-item"><span class="fa fa-home" style="margin-left: 5px;font-size: 15px;"></span><a href="@Url.Action("Home", "DashBoard", new { area = "Base" })" style="margin-left:5px;text-decoration:none">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span class="fa fa-window-restore" style="font-size:15px;"></span><span style="margin-left:5px">@ViewBag.Title</span></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                }
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="container-fluid body-content">
+                            @{ Html.RenderPartial("~/Areas/Base/Views/Shared/_PartialAlert.cshtml", new ViewDataDictionary { { "OnTop", true } }); }
+                            @RenderBody()
+                            @{ Html.RenderPartial("~/Areas/Base/Views/Shared/_PartialAlert.cshtml", new ViewDataDictionary { { "OnTop", false } }); }
+                        </div>
+                        <hr />
+                        <footer>
+                            <p>
+                                © SKYBLUE Software Solutions - 2020
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!--main content end-->
+    </section>
+
+    <script>
+        SetProgressPosition();
+        objProg = $('div#dspProgress');
+        objProg.show();
+        $(window).bind('beforeunload', function () {
+            objProg.show();
+        });
+        $(function () { setTimeout(function () { objProg.hide(); }, 1000); });
+    </script>
+</body>
+</html>

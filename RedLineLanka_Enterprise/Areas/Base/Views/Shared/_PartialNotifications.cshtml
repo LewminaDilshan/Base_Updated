@@ -1,0 +1,122 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("SignOut", "Home", new { area = "Base" }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+<ul class="nav pull-right top-menu">
+    <li id="alert_notificatoin_bar" class="dropdown">
+        <a href="@Url.Action("GetTiles", "Home", new { area = "Base" })">
+            <i class="fab fa-atlassian"></i>
+            <span class="badge bg-important"></span>
+        </a>
+    </li>
+    <li id="alert_notificatoin_bar" class="dropdown">
+        <a data-toggle="dropdown" class="" href="#">
+            <i class="fas fa-chart-bar"></i>
+            <span class="badge bg-important"></span>
+        </a>
+        <ul class="dropdown-menu extended dashboard dropdown-menu-right">
+            <div class="notify-arrow notify-arrow-blue"></div>
+            <li>
+                <a href="@Url.Action("Home", "DashBoard", new { area = "Base" })">
+                    <i class="fas fa-home"></i>
+                    <span style="margin-left:10px;">Home</span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="@Url.Action("Intake", "DashBoard", new { area = "Base" })">
+                    <i class="fas fa-users"></i>
+                    <span style="margin-left:10px;">Intake</span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="@Url.Action("AllPrograms", "DashBoard", new { area = "Base" })">
+                    <i class="far fa-list-alt"></i>
+                    <span style="margin-left:10px;">All Programs</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <!-- alert notification start-->
+    <li id="alert_notificatoin_bar" class="dropdown">
+        <a data-toggle="dropdown" class="" href="#">
+            <i class="fas fa-bell"></i>
+            <span class="badge bg-important">7</span>
+        </a>
+        <ul class="dropdown-menu extended notification dropdown-menu-right">
+            <div class="notify-arrow notify-arrow-blue"></div>
+            <li>
+                <p class="blue">You have 4 new notifications</p>
+            </li>
+            <li>
+                <a href="#" style="text-decoration: none;">
+                    <span class="label label-primary">
+                        <i class="fas fa-bell"></i>
+                    </span>
+                    Test notification 1
+                    <span class="small italic pull-right">5 mins</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" style="text-decoration: none;">
+                    <span class="label label-warning">
+                        <i class="fas fa-bell"></i>
+                    </span>
+                    Test notification 2
+                    <span class="small italic pull-right">50 mins</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" style="text-decoration: none;">
+                    <span class="label label-danger">
+                        <i class="fas fa-bell"></i>
+                    </span>
+                    Test notification 3
+                    <span class="small italic pull-right">1 hr</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" style="text-decoration: none;">
+                    <span class="label label-success">
+                        <i class="fas fa-bell"></i>
+                    </span>
+                    Test notification 4
+                    <span class="small italic pull-right">Today</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">See all notifications</a>
+            </li>
+        </ul>
+    </li>
+    <!-- alert notification end-->
+    <!-- user login dropdown start-->
+    <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="profile-ava">
+                <img alt="" src="~/Content/Images/default_user.png" style="height:35px" />
+            </span>
+            <span class="username">@Html.GetCurrentUserVM().ShortName</span>
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu extended logout">
+            <div class="notify-arrow notify-arrow-blue"></div>
+            <li class="eborder-top" style="display:none">
+                <a href="#"><i class="icon_profile"></i> My Profile</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-item dlgChangePassword" style="text-align:center;text-decoration: none;">Change Password</a>
+            </li>
+            <li>
+                <a href="#" class="dropdown-item dlgConfirmSubmit" data-button-text="Yes" data-message="Are you sure you want to sign out?"
+                   data-title="&lt;span class=&quot; glyphicon glyphicon-question-sign&quot; style=&quot; font-size:x-large;&quot;&gt &lt;/span&gt Confirm sign out"
+                   style="min-width:75px;text-align:center;text-decoration: none;">Sign out</a>
+            </li>
+        </ul>
+    </li>
+    <!-- user login dropdown end -->
+</ul>
+    }
+}
