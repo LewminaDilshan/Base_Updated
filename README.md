@@ -1,4 +1,4 @@
-# Readline Lanka ERP Application
+# Redline Lanka ERP Application
 
 * Please create a new branch from **develop branch** before doing any changes to the sourse code.
 
