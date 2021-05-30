@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/favicon.ico")">
     <meta charset="utf-8" />
-    <title>@(ViewBag.Title ?? "NEON") - Osill Pharmacy</title>
+    <title>@(ViewBag.Title ?? "SKYBLUE") - Readline Lanka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href=@Url.Content("~/Content/themes/base/all.css") rel="stylesheet" />
@@ -61,7 +62,7 @@
             </div>
 
             <!--logo start-->
-            <a href="@Url.Action("Home", "DashBoard", new { area = "Base" })" class="logo">Osill Pharmacy<span style="color:white"> - </span><span class="lite">NEON</span></a>
+            <a href="@Url.Action("Home", "DashBoard", new { area = "Base" })" class="logo">Redline Lanka<span style="color:white"> - </span><span class="lite">SkyBlue</span></a>
             <!--logo end-->
 
             <div class="top-nav notification-row">
@@ -108,7 +109,7 @@
                         <hr />
                         <footer>
                             <p>
-                                © SKYBLUE Software Solutions - 2020
+                                © SKYBLUE Software Solutions &nbsp; 2020 - @DateTime.Now.Year
                             </p>
                         </footer>
                     </div>

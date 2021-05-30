@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\SkyBlue Projects\Base Project\Base\OsilPharmacy_Enterprise\Common\DB\dbRedLineLankaModel.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\SkyBlue Projects\RedLine Lanka\Source Code\RedLineLanka\RedLineLanka_Enterprise\Common\DB\dbRedlineLankaModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -18,10 +18,10 @@ namespace RedLineLanka_Enterprise.Common
         private const string ServiceClientId = "a8610987-a1a6-4f12-b898-f04e5e7c642f";
         private const string ServiceClientSecret = "._3aU65~Wr3iCG.pN~AnK4lNc_qr.36aWS";
         private const string ServiceTenantName = "a6ec0f1c-2a34-41a9-ad11-2275a4888497";
-        private const string UserEmail = "circuito@nibm.lk";
-        private const string FromEmail = "OnlineNIBM@nibm.lk";
-        private const string ImagesFolder = "Circuito-Images";
-        private const string QualificationAttachmentsFolder = "Circuito-QualificationAttachments";
+        private const string UserEmail = "";
+        private const string FromEmail = "";
+        private const string ImagesFolder = "";
+        private const string QualificationAttachmentsFolder = "";
 
         private static string accessToken = null;
         private static DateTime? accessTokenExpiresAt = null;

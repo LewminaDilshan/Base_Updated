@@ -17,7 +17,7 @@ namespace RedLineLanka_Enterprise.Areas.Admin.Models
         {
             DetailsList = new List<UserRoleVM>();
             mappings = new ObjMappings<User, UserVM>();
-            mappings.Add(x => x.Employee == null ? x.UserName: x.Employee.FirstName + " " + x.Employee.LastName , x => x.ShortName);
+        //    mappings.Add(x => x.Employee == null ? x.UserName: x.Employee.FirstName + " " + x.Employee.LastName , x => x.ShortName);
             mappings.Add(x => x.UserRoles.Select(y => new UserRoleVM(y)).ToList(), x => x.DetailsList);
             mappings.Add(x => x.Password, x => x.Password.Encrypt());
             mappings.Add(x => x.Password.Decrypt(), x => x.Password);
