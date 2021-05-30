@@ -470,7 +470,7 @@ namespace System
         private static void InitializeEncodeMethod(this SymmetricAlgorithm EncodeMethod)
         {
             //Never change this value !!!important
-            string Key = "N!bmC!rcu!to@2017";
+            string Key = "R!dL!neLa!ca@2017";
             string sTemp;
             if (EncodeMethod.LegalKeySizes.Length > 0)
             {

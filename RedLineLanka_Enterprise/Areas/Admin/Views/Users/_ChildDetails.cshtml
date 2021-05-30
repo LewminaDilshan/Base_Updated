@@ -10,7 +10,7 @@
         @Html.HiddenFor(model => model.UserID)
         @Html.HiddenFor(model => model.UserRoleID)
 
-        <div class="form-group btn-sm">
+        <div class="form-group row">
             @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 @Html.DetailsViewFor(model => model.RoleName)

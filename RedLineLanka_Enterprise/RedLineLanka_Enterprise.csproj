@@ -386,10 +386,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\dbOsilPharmacyEnterprise.mdf" />
-    <Content Include="App_Data\dbOsilPharmacyEnterprise_log.ldf">
-      <DependentUpon>dbOsilPharmacyEnterprise.mdf</DependentUpon>
-    </Content>
     <Content Include="Common\DB\dbRedlineLankaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbRedlineLankaModel.edmx</DependentUpon>
@@ -2173,7 +2169,7 @@
     <Content Include="webfonts\ElegantIcons.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Base\Views\CsiItemsVM\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Areas\Base\Views\Mail\" />
     <Folder Include="bin\" />
     <Folder Include="Content\Images\Progress\" />

@@ -1,4 +1,4 @@
-﻿@if (Model is Nullable<int>)
+﻿@if (Model is null)
 {
     <h2 style="color:red">An Error Occured@(Model == 400 ? " : Bad Request" : Model == 404 ? " : Not Found" : ". Please contact Application Support.")</h2>
 }
