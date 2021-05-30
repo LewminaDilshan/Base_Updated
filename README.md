@@ -1,4 +1,4 @@
-# NEON - Readline Lanka ERP Application
+# Readline Lanka ERP Application
 
 * Please create a new branch from **develop branch** before doing any changes to the sourse code.
 
