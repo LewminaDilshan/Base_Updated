@@ -18,7 +18,7 @@ namespace RedLineLanka_Enterprise.Common.DB
         public Role()
         {
             this.UserRoles = new HashSet<UserRole>();
-            this.Menus = new HashSet<Menu>();
+            this.RoleMenuAccesses = new HashSet<RoleMenuAccess>();
         }
     
         public int RoleID { get; set; }
@@ -33,6 +33,6 @@ namespace RedLineLanka_Enterprise.Common.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRole> UserRoles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Menu> Menus { get; set; }
+        public virtual ICollection<RoleMenuAccess> RoleMenuAccesses { get; set; }
     }
 }

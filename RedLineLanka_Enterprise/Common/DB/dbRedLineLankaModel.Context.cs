@@ -25,6 +25,7 @@ namespace RedLineLanka_Enterprise.Common.DB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<RoleMenuAccess> RoleMenuAccesses { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<Parameter> Parameters { get; set; }
         public virtual DbSet<Role> Roles { get; set; }

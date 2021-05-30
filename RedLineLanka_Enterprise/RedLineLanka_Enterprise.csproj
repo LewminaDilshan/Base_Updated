@@ -194,7 +194,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -324,35 +324,38 @@
     <Compile Include="Areas\Base\Controllers\HomeController.cs" />
     <Compile Include="Areas\Base\Models\SignInVM.cs" />
     <Compile Include="Areas\Base\Models\ReportParameterVM.cs" />
-    <Compile Include="Common\DB\dbRedLineLankaModel.Context.cs">
+    <Compile Include="Common\DB\dbRedlineLankaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbRedLineLankaModel.Context.tt</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Common\DB\dbRedLineLankaModel.cs">
+    <Compile Include="Common\DB\dbRedlineLankaModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Common\DB\dbRedLineLankaModel.Designer.cs">
+    <Compile Include="Common\DB\dbRedlineLankaModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Common\DB\Menu.cs">
-      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\DB\Parameter.cs">
-      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\DB\Role.cs">
-      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DB\RoleMenuAccess.cs">
+      <DependentUpon>dbRedlineLankaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\DB\User.cs">
-      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\DB\UserRole.cs">
-      <DependentUpon>dbRedLineLankaModel.tt</DependentUpon>
+      <DependentUpon>dbRedlineLankaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\ExtendedActionFilterAttribute.cs" />
     <Compile Include="Common\ExtendedAuthorizeAttribute.cs" />
@@ -387,15 +390,15 @@
     <Content Include="App_Data\dbOsilPharmacyEnterprise_log.ldf">
       <DependentUpon>dbOsilPharmacyEnterprise.mdf</DependentUpon>
     </Content>
-    <Content Include="Common\DB\dbRedLineLankaModel.Context.tt">
+    <Content Include="Common\DB\dbRedlineLankaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
-      <LastGenOutput>dbRedLineLankaModel.Context.cs</LastGenOutput>
+      <DependentUpon>dbRedlineLankaModel.edmx</DependentUpon>
+      <LastGenOutput>dbRedlineLankaModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Common\DB\dbRedLineLankaModel.tt">
+    <Content Include="Common\DB\dbRedlineLankaModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
-      <LastGenOutput>dbRedLineLankaModel.cs</LastGenOutput>
+      <DependentUpon>dbRedlineLankaModel.edmx</DependentUpon>
+      <LastGenOutput>dbRedlineLankaModel.cs</LastGenOutput>
     </Content>
     <Content Include="Common\DB\ExecuteNew.sql" />
     <Content Include="Content\animate.css" />
@@ -1975,12 +1978,12 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <EntityDeploy Include="Common\DB\dbRedLineLankaModel.edmx">
+    <EntityDeploy Include="Common\DB\dbRedlineLankaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbRedLineLankaModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>dbRedlineLankaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Common\DB\dbRedLineLankaModel.edmx.diagram">
-      <DependentUpon>dbRedLineLankaModel.edmx</DependentUpon>
+    <Content Include="Common\DB\dbRedlineLankaModel.edmx.diagram">
+      <DependentUpon>dbRedlineLankaModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.5.0.intellisense.js" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />

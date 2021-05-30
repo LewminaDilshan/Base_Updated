@@ -18,7 +18,7 @@ namespace RedLineLanka_Enterprise.Common.DB
         public Menu()
         {
             this.Menus1 = new HashSet<Menu>();
-            this.Roles = new HashSet<Role>();
+            this.RoleMenuAccesses = new HashSet<RoleMenuAccess>();
         }
     
         public int MenuID { get; set; }
@@ -35,6 +35,6 @@ namespace RedLineLanka_Enterprise.Common.DB
         public virtual ICollection<Menu> Menus1 { get; set; }
         public virtual Menu Menu1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Role> Roles { get; set; }
+        public virtual ICollection<RoleMenuAccess> RoleMenuAccesses { get; set; }
     }
 }
